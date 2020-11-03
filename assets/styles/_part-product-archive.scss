@@ -1,0 +1,93 @@
+
+/* Product Archive
+---------------------------------------------------------------------------------------------------- */
+
+#products {
+  padding: 100px 0 40px;
+
+  // Animations
+  animation-name: fadeinup;
+  animation-duration: .75s;
+  animation-fill-mode: both;
+
+  &.related {
+    background-color: rgba($black, 0.015);
+  }
+
+  .products {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+
+    .product {
+      width: calc(33.333% - 30px);
+      float: left;
+      position: relative;
+      margin: 0 15px 53px;
+      transition-duration: 0.25s;
+
+      display: none; // Display none for the "load more" function.
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 20;
+      }
+
+      .product-cover {
+        width: 100%;
+        float: left;
+        padding-top: 100%;
+        margin-bottom: 21px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      .meta {
+        p {
+
+        }
+
+        .price {
+          font-weight: 900;
+        }
+      }
+    }
+
+    // Adusting product widths for fewer product shops.
+
+    &.one {
+      .product {
+        width: calc(100% - 30px);
+
+        .product-cover {
+          padding-top: 50%;
+        }
+      }
+    }
+
+    &.two,
+    &.four {
+      .product {
+        width: calc(50% - 30px);
+      }
+    }
+
+    @media ('max-width: 1080px') {
+      .product {
+        width: calc(50% - 30px);
+      }
+    }
+
+    @media ('max-width: 620px') {
+      .product {
+        width: calc(100% - 30px);
+      }
+    }
+  }
+}

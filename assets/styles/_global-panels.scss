@@ -1,0 +1,60 @@
+
+/* The Panel Class: Used for all panels (login forms, comment forms, etc.).
+---------------------------------------------------------------------------------------------------- */
+
+.panel {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background-color: $white;
+  opacity: 0;
+  visibility: hidden;
+
+  .inner {
+    width: 80%;
+    max-width: 480px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    animation-duration: .25s;
+    animation-fill-mode: both;
+    
+    header {
+      margin-bottom: 23px;
+      text-align: center;
+      
+      svg,
+      img {
+        height: 80px;
+        margin-bottom: 14px;
+      }
+    }
+  }
+  
+  .forms {
+    form {
+      .row {
+        margin-bottom: 20px;
+        
+        .group {
+          margin-left: 0;
+        }
+      }
+      
+      .action {
+        text-align: center;
+        
+        .button {
+          float: none;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

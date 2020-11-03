@@ -1,0 +1,21 @@
+/* Gutenberg Block Styles
+---------------------------------------------------------------------------------------------------- */
+.wp-block-pullquote {
+	border: none;
+	padding: 0;
+
+	&.is-style-solid-color{
+		blockquote {
+			padding: 2rem 0;
+			max-width: 80%;
+		}
+	}
+	
+
+	blockquote {
+		font-family: $header-font-family;
+		margin: 41px 0 43px;
+		font-size: 24px;
+		line-height: 1.4;
+	}
+}

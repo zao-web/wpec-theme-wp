@@ -1,0 +1,45 @@
+
+/* Global Containers: The primary containers used for wrapping most content.
+---------------------------------------------------------------------------------------------------- */
+
+.row {
+  width: 100%;
+  
+  // The inner content container.
+  
+  .inner {
+    width: 80%;
+    margin: 0px auto;
+    position: relative;
+    
+    // Global section headers.
+    
+    .intro {
+      margin-bottom: 100px;
+
+      h2,
+      h3 {
+        font-family: 'Lora', serif;
+        line-height: 1.2;
+        color: rgba($black, 0.95);
+        margin-bottom: 9px;
+      }
+      
+      h3 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// Narrow content using a body class.
+
+.narrow {
+  .inner {
+    max-width: 1000px;
+  }
+}

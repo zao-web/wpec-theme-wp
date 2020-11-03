@@ -1,0 +1,148 @@
+
+/* Global Shopping Cart: For the main cart page, sidebar cart, checkout and account.
+---------------------------------------------------------------------------------------------------- */
+
+.cart {
+
+  // Cart Overview: All the things in your cart, tax, totals, etc.
+
+  .overview {
+    border-top: 1px solid rgba($black, .05);
+
+    // Individual cart items.
+
+    .row {
+      height: 50px;
+      line-height: 50px;
+      position: relative;
+
+      // Item meta.
+
+      .meta {
+        float: left;
+        line-height: 1.45;
+        padding-top: 7px;
+
+        .label {
+          font-weight: 900;
+        }
+      }
+
+      .price {
+        float: right;
+        font-weight: 900;
+      }
+
+      // Product specific.
+
+      &.product {
+        height: 90px;
+        padding: 15px 0;
+        line-height: 60px;
+        border-bottom: 1px solid rgba($black, .05);
+
+        @media ('max-width: 550px') {
+          height: 110px;
+          padding: 25px 0;
+        }
+
+        .product-cover {
+          width: 60px;
+          height: 60px;
+          float: left;
+          margin-right: 15px;
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          border-radius: 50%;
+        }
+
+        // Quantity and options meta.
+
+        .quantity,
+        .options {
+          float: left;
+          margin-right: 1px;
+          padding: 1px 4px 0;
+          background-color: rgba($black, .025);
+          border-radius: 3px;
+          font-size: 12px;
+        }
+
+        // Item actions: Plus, minus, delete & edit.
+
+        .actions {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          @media ('max-width: 780px') {
+            top: auto;
+            bottom: -20px;
+            left: auto;
+            right: 0;
+            transform: translate(0, 0);
+          }
+
+          a {
+            width: 40px;
+            height: 40px;
+            float: left;
+            position: relative;
+            margin: 0 5px;
+            background-color: $black;
+            border-radius: 50%;
+            @extend %hover;
+
+            svg {
+              height: 14px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              fill: $white;
+            }
+
+            &.edit svg {
+              height: 12px;
+            }
+          }
+        }
+
+        // Item buttons: Using this for the "Return This" on the account page only.
+
+        .button {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          @media ('max-width: 780px') {
+            top: auto;
+            bottom: -11px;
+            left: auto;
+            right: 0;
+            transform: translate(0, 0);
+          }
+        }
+      }
+
+      // Totaling things up.
+
+      &.totals {
+        padding-top: 9px;
+        border-bottom: 1px dashed rgba($black, .05);
+      }
+
+      &.total {
+        padding-top: 9px;
+
+        .label,
+        .price {
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}

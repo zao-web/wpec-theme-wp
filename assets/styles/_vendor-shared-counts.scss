@@ -1,0 +1,31 @@
+
+/* Shared Counts Plugin
+---------------------------------------------------------------------------------------------------- */
+
+.discussion-meta {
+	.shared-counts-wrap {
+		margin-left: 8.5px;
+		width: auto;
+
+		&.style-buttons {
+			.shared-counts-button {
+				color: $white;
+				display: inline-flex;
+				font-weight: $font__weight-bold;
+				height: 30px;
+				line-height: 29px;
+				padding: 0 15px;
+				width: auto;
+
+				.shared-counts-label {
+					display: block;
+				}
+			}
+		}
+
+		.shared-counts-icon-label {
+			display: flex;
+			align-items: center;
+		}
+	}
+}

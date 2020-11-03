@@ -1,0 +1,74 @@
+
+/* The "Thanks" Page (order confirmation)
+---------------------------------------------------------------------------------------------------- */
+
+#thanks {
+  padding: 100px 0 120px;
+  
+  // Add the fadeinup animation.
+  
+  animation-name: fadeinup;
+  animation-duration: .75s;
+  animation-fill-mode: both;
+  
+  header {
+    text-align: center;
+  }
+  
+  // Order overview.
+  
+  .order {
+    padding: 21px 25px 30px;
+    margin-bottom: 57px;
+    border: 1px solid rgba($black, .05);
+    border-radius: 6px;
+    
+    header {
+      margin-bottom: 24px;
+      
+      h4 {
+        font-weight: 900;
+      }
+      
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+  
+  // Delivery.
+  
+  .delivery {
+    text-align: center;
+    
+    svg {
+      height: 40px;
+    }
+    
+    h3 {
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    
+    .address {
+      display: inline-block;
+      width: 350px;
+      min-height: 180px;
+      padding: 48px;
+      border-box: box-sizing;
+      margin: 23px auto 0;
+      background-color: rgba($black, 0.025);
+      border-radius: 6px;
+
+      @media (max-width: 550px) {
+        width: 100%;
+      }
+      
+      h4 {
+        font-size: 18px;
+        font-weight: 900;
+      }
+    }
+  }
+}

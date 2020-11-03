@@ -1,0 +1,287 @@
+
+/* The Header
+---------------------------------------------------------------------------------------------------- */
+
+#header {
+  background-color: rgba($black, 0.015);
+
+  // Add the fadeindown animation.
+
+  animation-name: fadeindown;
+  animation-duration: .75s;
+  animation-fill-mode: both;
+
+  // The upper header bar for social links (left) and user menu (right).
+
+  .bar {
+    height: 40px;
+    background-color: $black;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 40px;
+    color: $white;
+    text-transform: uppercase;
+
+    a {
+      color: $white;
+
+      &:hover {
+        color: rgba($white, .75);
+      }
+    }
+
+    // Social linkage.
+
+    .social {
+      height: 100%;
+      float: left;
+      padding-top: 3px;
+
+      a {
+        float: left;
+        margin-right: 20px;
+
+        &:hover {
+          opacity: 0.5;
+        }
+
+        svg {
+          height: 14px;
+          width: 14px;
+          fill: $white;
+        }
+      }
+    }
+
+    #menu-social {
+      display: flex;
+    }
+
+    // User menu.
+
+    .user {
+      float: right;
+
+      a {
+        float: left;
+        margin-left: 20px;
+
+        span {
+          width: 20px;
+          height: 20px;
+          float: right;
+          margin: 10px 0 0 10px;
+          background-color: rgba($white, 0.95);
+          border-radius: 50%;
+          line-height: 20px;
+          color: $black;
+          font-weight: 900;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  // The main header for the logo & main menu (left) and the search field (right).
+
+  .main {
+    height: 100px;
+    display: flex;
+
+    // Logo & brand.
+
+    .brand {
+      height: 40px;
+      float: left;
+      margin-top: 30px;
+
+      &:hover {
+        transform: translateX(-3px);
+      }
+
+      .logo,
+      img {
+        height: 100%;
+        float: left;
+        fill: $black;
+      }
+
+      h1 {
+        float: left;
+        margin-left: 20px;
+        line-height: 40px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: $black;
+        text-transform: uppercase;
+      }
+
+      .menu {
+        display: none;
+
+        @media ('max-width: 600px') {
+          display: block;
+          float: left;
+          margin: 8px 0 0 10px;
+        }
+      }
+    }
+
+    // The main menu.
+
+    nav {
+      height: 40px;
+      position: relative;
+      float: left;
+      margin: 30px 0 0 30px;
+      padding-left: 30px;
+      border-left: 1px solid $black;
+
+      @media ('max-width: 600px') {
+        display: none;
+      }
+
+      a {
+        float: left;
+        margin-right: 30px;
+        line-height: 40px;
+        font-size: 12px;
+        font-weight: 900;
+        color: $black;
+        text-transform: uppercase;
+
+        &:hover {
+          color: rgba($black, 0.5);
+        }
+      }
+    }
+
+    // The search field.
+
+    #search {
+      width: 300px;
+      height: 40px;
+      position: absolute;
+      top: 30px;
+      right: 0;
+
+      input {
+        width: 100%;
+        height: 40px;
+        float: left;
+        padding: 0 20px;
+        background-color: $white;
+        border: 1px solid rgba($black, 0.075);
+        border-radius: 20px;
+        line-height: 40px;
+        transition-duration: 0.25s;
+      }
+
+      .search-submit {
+        background: $black url('assets/images/svg-icons/search.svg') center center no-repeat;
+        background-size: 20px;
+        border-radius: 50%;
+        color: $black;
+        cursor: pointer;
+        font-size: 1px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        transition: .25s;
+        z-index: 10;
+
+        &:hover {
+          right: -3px;
+        }
+
+        &.toggle {
+          visibility: hidden;
+        }
+
+        svg {
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          fill: $white;
+        }
+      }
+
+      @media ('max-width: 980px') {
+        width: 40px;
+
+        input {
+          visibility: hidden;
+        }
+
+        .submit {
+          &.toggle {
+            visibility: visible;
+            z-index: 20;
+          }
+        }
+
+        &.toggled {
+          width: calc(100% + 2px);
+
+          input {
+            visibility: visible;
+          }
+
+          .submit {
+            &.toggle {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.site-branding {
+  display: inline-flex;
+  align-items: center;
+  float: left;
+  margin-top: 30px;
+  transition: .25s;
+
+  &:hover {
+    transform: translateX(-3px);
+  }
+}
+
+.site-title {
+  float: left;
+  margin-left: 20px;
+  line-height: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: $black;
+  text-transform: uppercase;
+}
+
+.site-logo {
+  height: 40px;
+
+  img {
+    height: 100%;
+    min-width: 40px;
+    width: auto;
+  }
+}
+
+.menu-toggle {
+  display: none;
+
+  @media ('max-width: 600px') {
+    display: block;
+    float: left;
+    margin: 8px 0 0 10px;
+  }
+}

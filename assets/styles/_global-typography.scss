@@ -1,0 +1,53 @@
+
+/* Base Typography: Nothing much here.
+---------------------------------------------------------------------------------------------------- */
+
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  color: rgba($black, 0.75);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  a {
+    color: rgba($black, 0.95);
+  }
+
+  h1,
+  h2 {
+    font-family: $header-font-family;
+    color: rgba($black, 0.95);
+  }
+
+  h1,
+  h2 {
+    font-size: 40px;
+    line-height: 1.2;
+
+    @media ('max-width: 480px') {
+      font-size: 30px;
+    }
+  }
+
+  article,
+  .article {
+    a {
+      color: rgba($black, 0.95);
+      border-bottom: 1px dotted rgba($black, 0.95);
+
+      &:hover {
+        color: rgba($black, 0.5);
+        border-bottom: 1px dotted rgba($black, 0.5);
+      }
+    }
+  }
+}
+
+.page-title {
+  .blog & {
+    margin-bottom: $size__spacing-unit;
+    text-align: center;
+  }
+}

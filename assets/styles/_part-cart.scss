@@ -1,0 +1,35 @@
+
+/* The Shopping Cart Page
+---------------------------------------------------------------------------------------------------- */
+
+#cart {
+  padding: 100px 0 120px;
+
+  // Animations
+  animation-name: fadeinup;
+  animation-duration: .75s;
+  animation-fill-mode: both;
+
+  header {
+    text-align: center;
+
+    @media ('max-width: 900px') {
+      text-align: left;
+    }
+  }
+
+  .button {
+    width: 50%;
+    float: right;
+    transform: translateX(-50%);
+    margin-top: 60px;
+
+    @extend %hover;
+
+    @media ('max-width: 900px') {
+      width: auto;
+      float: left;
+      transform: translateX(0);
+    }
+  }
+}

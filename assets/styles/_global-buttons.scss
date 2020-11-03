@@ -1,0 +1,352 @@
+
+/* Standard Buttons
+---------------------------------------------------------------------------------------------------- */
+
+.button {
+  display: inline-block;
+  height: 30px;
+  position: relative;
+  z-index: 2;
+  padding: 0 15px;
+  border-radius: 15px;
+  font-weight: 900;
+  line-height: 29px;
+
+  // Visual icon buttons.
+
+  &.visual {
+    padding-left: 0;
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      float: left;
+      position: relative;
+      margin-right: 10px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      svg {
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  //Checkout Button
+ 
+  &.checkout {
+    margin-top: 30px;
+
+    @media (max-width: 900px) {
+      min-width: 340px;
+    }
+  }
+
+  //Show Order Details button
+
+  &.more{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    @extend %hover;
+  }
+
+  // Large buttons.
+
+  &.large {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px 0 0 20px;
+    line-height: 39px;
+
+    &.visual {
+      .icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+
+        svg {
+          height: 20px;
+        }
+      }
+    }
+
+    @media ('max-width: 900px') {
+      width: auto;
+      height: 30px;
+      border-radius: 15px;
+      line-height: 29px;
+
+      &.visual {
+        .icon {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+
+          svg {
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  // Small buttons.
+
+  &.small {
+    height: 20px;
+    float: none;
+    padding: 0 10px;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  // Button meta.
+
+  .meta {
+    height: 100%;
+    float: right;
+    padding: 0 15px;
+    margin-right: -15px;
+  }
+
+  // Global hover state (See _global-extensions.scss).
+
+  @extend %hover;
+
+  // White buttons.
+
+  &.white {
+    background-color: $white;
+    color: rgba($black, 0.75);
+  }
+
+  // Black buttons.
+
+  &.black {
+    background-color: rgba($black, 0.75);
+    color: rgba($white, 0.9);
+
+    .icon {
+      background-color: $black;
+
+      svg {
+        fill: rgba($white, 0.9);
+      }
+    }
+
+    .meta {
+      background-color: $black;
+    }
+  }
+
+  // Blue buttons.
+
+  &.blue {
+    background-color: rgba($blue, 0.75);
+    color: rgba($white, 0.9);
+
+    .icon {
+      background-color: $blue;
+
+      svg {
+        fill: rgba($white, 0.9);
+      }
+    }
+
+    .meta {
+      background-color: $blue;
+    }
+  }
+
+  // Green buttons.
+
+  &.green {
+    background-color: rgba($green, 0.85);
+    color: rgba($white, 0.9);
+
+    .icon {
+      background-color: $green;
+
+      svg {
+        fill: rgba($white, 0.9);
+      }
+    }
+
+    .meta {
+      background-color: $green;
+    }
+  }
+
+  // Twitter buttons.
+
+  &.twitter {
+    background-color: rgba($twitter, .9);
+    color: rgba($white, 0.9);
+
+    .icon {
+      background-color: $twitter;
+
+      svg {
+        fill: rgba($white, 0.9);
+        height: 13px;
+      }
+    }
+  }
+
+  // Facebook buttons.
+
+  &.facebook {
+    background-color: rgba($facebook, .9);
+    color: rgba($white, 0.9);
+
+    .icon {
+      background-color: $facebook;
+
+      svg {
+        fill: rgba($white, 0.9);
+        height: 16px;
+      }
+    }
+  }
+
+  // Pinterest buttons.
+
+  &.pinterest {
+    background-color: rgba($pinterest, .9);
+    color: rgba($white, 0.9);
+
+    .icon {
+      background-color: $pinterest;
+
+      svg {
+        fill: rgba($white, 0.9);
+        height: 16px;
+      }
+    }
+  }
+}
+
+/* Close Button: Used for the sidebar cart & panels.
+---------------------------------------------------------------------------------------------------- */
+
+.close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  svg {
+    height: 100%;
+    fill: $black;
+  }
+}
+
+/* Notification Links/Buttons: The yellow notification bar.
+---------------------------------------------------------------------------------------------------- */
+
+.notification {
+  height: 40px;
+  background-color: $yellow;
+  text-align: center;
+  line-height: 40px;
+}
+
+/* Load More: The "loadmore" buttons used for products and comments.
+---------------------------------------------------------------------------------------------------- */
+
+.loadmore {
+  border-top: 1px solid rgba($black, 0.05);
+  height: 40px;
+  position: relative;
+  margin: 40px 0 21px;
+
+  .button {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px;
+
+    &:hover {
+      margin-top: 8px;
+    }
+  }
+}
+
+/* Slider Arrow: For toggling sidebars.
+---------------------------------------------------------------------------------------------------- */
+
+.slider {
+  display: none;
+
+  @media ('max-width: 860px') {
+    display: block;
+  }
+  
+  width: 30px;
+  height: 30px;
+
+  position: fixed;
+  top: 30%;
+  z-index: 30;
+
+  background-color: $black;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  &.left {
+    left: calc(10% - 15px);
+
+    // Add the bounceright animation.
+
+    animation-name: bounceright;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+
+    &.toggled {
+      left: -100px;
+    }
+  }
+
+  &.right {
+    right: calc(10% - 15px);
+
+    // Add the bounceleft animation.
+
+    animation-name: bounceleft;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+
+    &.toggled {
+      right: -100px;
+    }
+  }
+
+  svg {
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: $white;
+  }
+}

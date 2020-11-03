@@ -1,0 +1,76 @@
+
+/* Globals: All the global re-usable stuff.
+---------------------------------------------------------------------------------------------------- */
+
+// Reset first.
+
+@import 'assets/styles/global-reset';
+
+// Variables
+@import 'assets/styles/global-variables';
+
+// Extensions
+@import 'assets/styles/global-extensions';
+
+// Accessibility
+@import 'assets/styles/global-accessibility';
+
+// Animations.
+
+@import 'assets/styles/global-animations';
+
+// Typography, buttons and forms.
+
+@import 'assets/styles/global-typography';
+@import 'assets/styles/global-buttons';
+@import 'assets/styles/global-forms';
+
+// Global containers.
+
+@import 'assets/styles/global-containers';
+@import 'assets/styles/global-cover';
+
+// Global Layout
+@import 'assets/styles/_global-alignments';
+
+// Global menus.
+
+@import 'assets/styles/global-menus';
+
+// Global panels.
+
+@import 'assets/styles/global-panels';
+
+// Global cart styles.
+
+@import 'assets/styles/global-cart';
+
+// Gutenberg Block Styles
+@import 'assets/styles/global-blocks';
+
+/* Individual Parts: All the single-page specific stuff.
+---------------------------------------------------------------------------------------------------- */
+
+// The Header & Footer.
+
+@import 'assets/styles/part-header';
+@import 'assets/styles/part-footer';
+
+// Blog specific stuff.
+
+@import 'assets/styles/part-article';
+@import 'assets/styles/part-article-comments';
+
+// Commerce stuff.
+
+@import 'assets/styles/part-product';
+@import 'assets/styles/part-product-archive';
+@import 'assets/styles/part-cart';
+@import 'assets/styles/part-cart-side';
+@import 'assets/styles/part-checkout';
+@import 'assets/styles/part-thanks';
+@import 'assets/styles/part-account';
+
+/* Vendor Styles: Overrides plugin styling
+---------------------------------------------------------------------------------------------------- */
+@import 'assets/styles/vendor-shared-counts';

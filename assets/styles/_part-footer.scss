@@ -1,0 +1,142 @@
+
+/* The Footer
+---------------------------------------------------------------------------------------------------- */
+
+#footer {
+    padding: 100px 0;
+    background-color: $black;
+
+    // Add the fadeinup animation.
+
+    animation-name: fadeinup;
+    animation-duration: .75s;
+    animation-fill-mode: both;
+
+    p {
+        color: rgba($white, 0.85);
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-family: $base-font-family;
+        color: $white;
+        font-size: 16px;
+    }
+
+    a {
+        color: rgba($white, 0.5);
+
+        &:hover {
+            color: rgba($white, 0.85);
+        }
+    }
+
+    form {
+        width: 100%;
+        position: relative;
+
+        input {
+            height: 40px;
+            padding: 0 20px;
+            background-color: rgba($white, 0.15);
+            border: 1px solid rgba($white, 0.075);
+            border-radius: 20px;
+            line-height: 40px;
+            color: $white;
+        }
+
+        .submit {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 50%;
+            background-color: $white;
+
+            svg {
+                height: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                fill: rgba($black, 0.85);
+            }
+        }
+    }
+
+    .menus {
+        display: grid;
+        grid-gap: 30px;
+
+        @media ('max-width: 480px') {
+            text-align: center;
+        }
+
+        @media ('min-width: 481px') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media ('min-width: 900px') {
+            grid-template-columns: repeat(4, auto);
+            justify-content: space-between;
+        }
+    }
+
+    .newsletter {
+        padding: 0 0 50px;
+        border-bottom: 1px solid rgba($white,0.15);
+        text-align: center;
+    }
+
+    .menus {
+        padding-top: 40px;
+    }
+
+    // Style mailchimp newsletter
+    .mc4wp-form {
+        font-size: 16px;
+        margin-top: 22px;
+
+        .instructions {
+            margin-bottom: 22px;
+        }
+
+        .input {
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        input[type="email"] {
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            position: absolute;
+            border-radius: 50%;
+            background: $white url('assets/images/svg-icons/checkmark.svg') center center no-repeat;
+            background-size: 20px 20px;
+            height: 40px;
+            width: 40px;
+            top: 0;
+            right: 0;
+            transition: .25s;
+            cursor: pointer;
+            color: transparent;
+
+            &:hover {
+                right: -3px;
+            }
+        }
+
+        .hide-label {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+            padding:0;
+            border:0;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+
+/* Menus: Base styles for full-width column menus.
+---------------------------------------------------------------------------------------------------- */
+
+.main-menu {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  display: none;
+
+  @media (min-width: 980px) {
+    display: flex;
+  }
+
+  @media (max-width: 480px) {
+    text-align: center;
+  }
+
+  a {
+    float: left;
+    margin-right: 30px;
+    font-weight: 900;
+    color: $black;
+
+    @media ('max-width: 480px') {
+      float: none;
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    &:hover {
+      color: rgba($black, 0.5);
+    }
+  }
+}
+
+.menus {
+  // Individual menus.
+
+  .menu {
+
+    h3 {
+      color: rgba($black, 0.95);
+    }
+
+    a {
+      color: rgba($black, 0.5);
+
+      &:hover {
+        color: rgba($black, 0.95);
+      }
+    }
+  }
+}
+
+/* Sub Menus: Used for the main header menu.
+---------------------------------------------------------------------------------------------------- */
+
+.sub-menu {
+  position: absolute;
+  top: 40px;
+  padding: 60px 0 0;
+  background-color: $white-gray;
+  border-top: 1px solid rgba($black, .05);
+  border-bottom: 1px solid rgba($black, .05);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 400;
+
+  .menu-item-has-children:hover & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media ('max-width: 480px') {
+    padding-bottom: 30px;
+  }
+
+  .menu {
+    margin-bottom: 60px;
+
+    @media ('max-width: 480px') {
+      margin-bottom: 30px;
+    }
+  }
+}
