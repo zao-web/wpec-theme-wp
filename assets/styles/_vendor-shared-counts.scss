@@ -3,29 +3,55 @@
 ---------------------------------------------------------------------------------------------------- */
 
 .discussion-meta {
-	.shared-counts-wrap {
-		margin-left: 8.5px;
-		width: auto;
+	.shared-counts {
+		&-wrap {
+			padding-top: 23px; //Must have padding to not cutoff buttons on their transform hover
+			width: auto;
 
-		&.style-buttons {
-			.shared-counts-button {
-				color: $white;
-				display: inline-flex;
-				font-weight: $font__weight-bold;
-				height: 30px;
-				line-height: 29px;
-				padding: 0 15px;
-				width: auto;
+			&.style-buttons {
+				.shared-counts-button {
+					color: $white;
+					display: inline-flex;
+					font-weight: $font__weight-bold;
+					height: 30px;
+					line-height: 29px;
+					padding: 0 15px;
+					width: auto;
 
-				.shared-counts-label {
-					display: block;
+					&.facebook {
+						@extend %hover;
+						&:hover {
+							background: $facebook;
+						}
+					}
+
+					&.twitter {
+						background: $twitter;
+						@extend %hover;
+
+						&:hover {
+							background: $twitter;
+						}
+					}
+
+					.shared-counts-label {
+						display: block;
+					}
+
+					svg {
+						margin-top: 10px;
+					}
 				}
 			}
 		}
 
-		.shared-counts-icon-label {
+		&-icon-label {
 			display: flex;
 			align-items: center;
+		}
+
+		&-icon {
+			margin-right: 5px;
 		}
 	}
 }

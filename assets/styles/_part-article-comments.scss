@@ -12,14 +12,14 @@
     text-align: center;
     margin-bottom: 85px;
 
-    h2 {
-      margin-bottom: 23px;
-    }
-
     .button {
-      margin: 0 3.5px;
+      margin: 23px 12px 0 0;
       display: inline-block;
       margin-bottom: 15px;
+
+      &:only-child {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -152,7 +152,6 @@
   // The comment text.
 
   .text {
-
     p {
       margin-bottom: 21px;
     }
