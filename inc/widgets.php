@@ -27,8 +27,8 @@ function simply_widgets_init() {
 	}
 
 	$footer_sidebars = array(
-		'footer-1'  => esc_html__( 'Footer Sidebar 1', 'simply' ),
-		'footer-2'  => esc_html__( 'Footer Sidebar 2', 'simply' ),
+		'footer-1'  => esc_html__( 'Footer Top Sidebar', 'simply' ),
+		'footer-2'  => esc_html__( 'Footer Bottom Sidebar', 'simply' ),
 	);
 
 	// Loop through each sidebar and register.
