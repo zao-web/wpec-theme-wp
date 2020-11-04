@@ -168,7 +168,7 @@
 
         h3 {
           margin-bottom: 15px;
-          font-family: 'Lora', serif;
+          font-family: $header-font-family;
           color: rgba(0, 0, 0, 0.95);
           font-size: 24px;
           line-height: 1.2;
@@ -333,7 +333,7 @@
           h2, h3 {
             width: 120%;
             margin: 41px 0 43px -10%;
-            font-family: 'Lora', serif;
+            font-family: $header-font-family;
             color: rgba($black, 0.95);
             font-size: 30px;
             line-height: 1.2;

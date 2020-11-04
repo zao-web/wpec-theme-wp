@@ -110,7 +110,7 @@
         float: left;
         margin-left: 20px;
         line-height: 40px;
-        font-family: 'Roboto', sans-serif;
+        font-family: $base-font-family;
         font-size: 20px;
         font-weight: 400;
         color: $black;
@@ -262,7 +262,7 @@
   float: left;
   margin-left: 20px;
   line-height: 40px;
-  font-family: 'Roboto', sans-serif;
+  font-family: $base-font-family;
   font-size: 20px;
   font-weight: 400;
   color: $black;
