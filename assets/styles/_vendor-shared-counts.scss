@@ -8,6 +8,11 @@
 			padding-top: 23px; //Must have padding to not cutoff buttons on their transform hover
 			width: auto;
 
+			@include media(mobile-max) {
+				display: flex;
+				justify-content: center;
+			}
+
 			&.style-buttons {
 				.shared-counts-button {
 					color: $white;

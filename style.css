@@ -2106,6 +2106,11 @@ label {
   -ms-flex-pack: center;
       justify-content: center;
 }
+@media (max-width: 480px) {
+  .discussion-meta {
+    display: block;
+  }
+}
 
 /* Single Product
 ---------------------------------------------------------------------------------------------------- */
@@ -2647,6 +2652,14 @@ label {
 .discussion-meta .shared-counts-wrap {
   padding-top: 23px;
   width: auto;
+}
+@media (max-width: 480px) {
+  .discussion-meta .shared-counts-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
 }
 .discussion-meta .shared-counts-wrap.style-buttons .shared-counts-button {
   color: #fff;

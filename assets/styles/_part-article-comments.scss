@@ -169,4 +169,8 @@
 .discussion-meta {
   display: flex;
   justify-content: center;
+
+  @include media(mobile-max) {
+    display: block;
+  }
 }
