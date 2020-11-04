@@ -120,7 +120,8 @@
       .menu {
         display: none;
 
-        @media ('max-width: 600px') {
+        //Confirm original was 600px
+        @include media(tablet-max) {
           display: block;
           float: left;
           margin: 8px 0 0 10px;
@@ -138,7 +139,8 @@
       padding-left: 30px;
       border-left: 1px solid $black;
 
-      @media ('max-width: 600px') {
+      //Confirm original was 600px
+      @include media(tablet-max) {
         display: none;
       }
 
@@ -211,7 +213,8 @@
         }
       }
 
-      @media ('max-width: 980px') {
+      //Confirm original was 980px
+      @include media(desktop-max) {
         width: 40px;
 
         input {
@@ -279,7 +282,8 @@
 .menu-toggle {
   display: none;
 
-  @media ('max-width: 600px') {
+  //Confirm original was 600px
+  @include media(tablet-max) {
     display: block;
     float: left;
     margin: 8px 0 0 10px;

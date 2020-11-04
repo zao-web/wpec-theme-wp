@@ -43,7 +43,8 @@
   &.checkout {
     margin-top: 30px;
 
-    @media (max-width: 900px) {
+    //Confirm original was 900px
+    @include media(desktop-max) {
       min-width: 340px;
     }
   }
@@ -77,7 +78,8 @@
       }
     }
 
-    @media ('max-width: 900px') {
+    //Confirm original was 900px
+    @include media(desktop-max) {
       width: auto;
       height: 30px;
       border-radius: 15px;
@@ -295,7 +297,8 @@
 .slider {
   display: none;
 
-  @media ('max-width: 860px') {
+  //Confirm original was 860px
+  @include media(desktop-max) {
     display: block;
   }
   

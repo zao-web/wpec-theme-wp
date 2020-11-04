@@ -26,7 +26,7 @@ body {
     font-size: 40px;
     line-height: 1.2;
 
-    @media ('max-width: 480px') {
+    @include media(mobile-max) {
       font-size: 30px;
     }
   }

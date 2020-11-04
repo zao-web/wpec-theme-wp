@@ -33,7 +33,7 @@
   border-top: 1px solid rgba($black, 0.05);
 
   &-body {
-    @media ('min-width: 941px') {
+    @include media(desktop) {
       display: grid;
       grid-template-columns: 1fr 2fr;
     }
@@ -54,7 +54,7 @@
     align-content: start;
     grid-template-columns: auto auto 1fr;
 
-    @media ('max-width: 940px') {
+    @include media(desktop-max) {
       padding-bottom: 18px;
       margin-bottom: 21px;
       border-bottom: 1px solid rgba($black, 0.05);
@@ -106,7 +106,7 @@
   .date {
     margin-right: 60px;
 
-    @media ('max-width: 940px') {
+    @include media(desktop-max) {
       margin-right: 0;
       margin-left: 15px;
     }
@@ -114,7 +114,7 @@
     &.mobile {
       text-align: right;
 
-      @media ('min-width: 941px') {
+      @include media(desktop) {
         display: none;
       }
     }
@@ -123,7 +123,7 @@
       text-transform: uppercase;
       font-weight: $font__weight-bold;
 
-      @media ('max-width: 940px') {
+      @include media(desktop-max) {
         display: none;
       }
     }

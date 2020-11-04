@@ -78,13 +78,15 @@
       }
     }
 
-    @media ('max-width: 1080px') {
+    //Confirm original was 1080px
+    @include media(desktop-max) {
       .product {
         width: calc(50% - 30px);
       }
     }
 
-    @media ('max-width: 620px') {
+    //Confirm original was 620px
+    @include media(tablet-max) {
       .product {
         width: calc(100% - 30px);
       }

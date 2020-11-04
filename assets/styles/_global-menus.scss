@@ -7,11 +7,12 @@
   margin-bottom: 30px;
   display: none;
 
-  @media (min-width: 980px) {
+  //Confirm original was 980px
+  @include media(desktop) {
     display: flex;
   }
 
-  @media (max-width: 480px) {
+  @include media(mobile-max) {
     text-align: center;
   }
 
@@ -21,7 +22,7 @@
     font-weight: 900;
     color: $black;
 
-    @media ('max-width: 480px') {
+    @include media(mobile-max) {
       float: none;
       display: inline-block;
       margin: 0 10px;
@@ -71,14 +72,14 @@
     visibility: visible;
   }
 
-  @media ('max-width: 480px') {
+  @include media(mobile-max) {
     padding-bottom: 30px;
   }
 
   .menu {
     margin-bottom: 60px;
 
-    @media ('max-width: 480px') {
+    @include media(mobile-max) {
       margin-bottom: 30px;
     }
   }

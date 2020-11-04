@@ -41,7 +41,8 @@
         line-height: 60px;
         border-bottom: 1px solid rgba($black, .05);
 
-        @media ('max-width: 550px') {
+        //Confirm as original was 550px;
+        @include media(mobile-max) {
           height: 110px;
           padding: 25px 0;
         }
@@ -77,7 +78,7 @@
           left: 50%;
           transform: translate(-50%, -50%);
 
-          @media ('max-width: 780px') {
+          @include media(tablet-max) {
             top: auto;
             bottom: -20px;
             left: auto;
@@ -118,7 +119,7 @@
           left: 50%;
           transform: translate(-50%, -50%);
 
-          @media ('max-width: 780px') {
+          @include media(tablet-max) {
             top: auto;
             bottom: -11px;
             left: auto;

@@ -13,7 +13,8 @@
   header {
     text-align: center;
 
-    @media ('max-width: 900px') {
+    //Confirm original was 900px
+    @include media(desktop-max) {
       text-align: left;
     }
   }
@@ -26,7 +27,8 @@
 
     @extend %hover;
 
-    @media ('max-width: 900px') {
+    //Confirm original was 900px
+    @include media(desktop-max) {
       width: auto;
       float: left;
       transform: translateX(0);

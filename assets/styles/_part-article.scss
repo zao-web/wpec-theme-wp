@@ -20,7 +20,8 @@
       margin-left: 40%;
       position: relative;
 
-      @media ('max-width: 860px') {
+      //Confirm original was 860px
+      @include media(desktop-max) {
         width: calc(100% - 60px);
         margin-left: 60px;
         transition-duration: 0.5s;
@@ -142,12 +143,14 @@
       .blog & {
         top: 80px;
 
-        @media ('max-width: 860px') {
+        //Confirm original was 860px
+        @include media(desktop-max) {
           top: 60px;
         }
       }
 
-      @media ('max-width: 860px') {
+      //Confirm original was 860px
+      @include media(desktop-max) {
         width: 100%;
         left: -100%;
         z-index: 20;

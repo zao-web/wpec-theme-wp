@@ -18,7 +18,8 @@
     float: left;
     padding-right: 60px;
 
-    @media ('max-width: 860px') {
+    //Confirm original was 860px
+    @include media(desktop-max) {
       width: 100%;
       float: none;
       position: absolute;
@@ -76,7 +77,8 @@
     width: 40%;
     float: left;
 
-    @media ('max-width: 860px') {
+    //Confirm original was 860px
+    @include media(desktop-max) {
       width: calc(100% - 60px);
       margin-left: 60px;
       transition-duration: 0.5s;
