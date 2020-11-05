@@ -12,7 +12,7 @@ get_header(); ?>
   <?php simply_sidebar_slideout_controls(); ?>
 
   <?php tha_content_before(); ?>
-  <section class="row article single">
+  <section class="row article archive">
     <div class="inner">
 
       <?php tha_content_while_before(); ?>
@@ -24,7 +24,7 @@ get_header(); ?>
         </header>
 
         <!-- Sidebar: The sliding sidebar with the post archive. -->
-        <div class="column side archive slide">
+        <div class="column side slide">
           <div class="group current-1">
 
             <?php

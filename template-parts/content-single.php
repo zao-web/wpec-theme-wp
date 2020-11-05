@@ -22,29 +22,26 @@
 <?php tha_sidebars_after(); ?>
 
 <?php tha_entry_before(); ?>
-<div class="post">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php tha_entry_top(); ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<header class="entry-header">
-			<div class="meta">
-				<?php simply_theme_entry_header(); ?>
-			</div>
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		</header><!-- .entry-header -->
+	<header class="entry-header">
+		<div class="meta">
+			<?php simply_theme_entry_header(); ?>
+		</div>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</header><!-- .entry-header -->
 
-		<div class="entry-content">
-			<?php tha_entry_content_before(); ?>
-			<?php the_content(); ?>
-			<?php tha_entry_content_after(); ?>
+	<div class="entry-content">
+		<?php tha_entry_content_before(); ?>
+		<?php the_content(); ?>
+		<?php tha_entry_content_after(); ?>
 
-			<?php wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'simply' ),
-				'after'  => '</div>',
-			) );
-		?>
-		</div><!-- .entry-content -->
-
-	</article><!-- #post-## -->
+		<?php wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'simply' ),
+			'after'  => '</div>',
+		) );
+	?>
+	</div><!-- .entry-content -->
 	<?php tha_entry_bottom(); ?>
-</div><!-- .post -->
+</article><!-- #post-## -->
 <?php tha_entry_after(); ?>
