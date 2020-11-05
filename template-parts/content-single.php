@@ -10,7 +10,7 @@
 ?>
 
 <?php tha_sidebars_before(); ?>
-<div class="side slide">
+<div class="side column slide">
 	<?php tha_sidebar_top(); ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-post' ) ) { ?>

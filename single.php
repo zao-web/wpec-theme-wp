@@ -16,6 +16,8 @@ get_header(); ?>
 
 	<?php tha_content_before(); ?>
 
+	<?php simply_sidebar_slideout_controls(); ?>
+
 	<section class="row article single">
 		<?php tha_content_top(); ?>
 		<div class="inner">
