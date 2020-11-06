@@ -177,11 +177,11 @@ if ( ! function_exists( 'simply_comment_form' ) ) :
 				array(
 					'fields' 		=> array(
 				        //Author field
-				        'author' => '<p class="row comment-form-author"><label for="author">' . __( 'Name' ) . '<span class="required">*</span></label><input id="author" name="author" aria-required="true" placeholder="' . $comment_author .'"></input></p>',
+				        'author' => '<p class="row comment-form-author"><label for="author">' . __( 'Name' ) . '<span class="required">*</span></label><input type="text" id="author" name="author" aria-required="true" placeholder="' . $comment_author .'"></input></p>',
 				        //Email Field
-				        'email' => '<p class="row comment-form-email"><label for="email">' . __( 'Email' ) . '<span class="required">*</span></label><input id="email" name="email" aria-required="true" placeholder="' . $comment_email .'"></input></p>',
+				        'email' => '<p class="row comment-form-email"><label for="email">' . __( 'Email' ) . '<span class="required">*</span></label><input type="email" id="email" name="email" aria-required="true" placeholder="' . $comment_email .'"></input></p>',
 				        //URL Field
-				        'url' => '<p class="row comment-form-url"><label for="url">' . __( 'Website' ) . '</label><input id="url" name="url" placeholder="' . $comment_url .'"></input></p>',
+				        'url' => '<p class="row comment-form-url"><label for="url">' . __( 'Website' ) . '</label><input type="text" id="url" name="url" placeholder="' . $comment_url .'"></input></p>',
 				    ),
 				    'comment_field' => '<p class="row comment-form-comment"><label for="comment">' . __( 'Comment' ) . '</label><textarea id="comment" name="comment" maxlength="65525" aria-required="true" style="overflow: hidden; overflow-wrap: break-word; resize: horizontal;"></textarea></p>',
 					'logged_in_as'  => null,
