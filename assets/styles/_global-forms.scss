@@ -266,6 +266,14 @@ label {
 
 // Comment Form
 .comment-form {
+  max-width: 700px;
+
+  input[type='text'],
+  input[type='email'],
+  textarea {
+    width: 100%;
+  }
+
   .row {
     border: 1px solid rgba($black, .05);
     padding: 24px 25px;

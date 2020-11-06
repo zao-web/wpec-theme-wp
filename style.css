@@ -801,6 +801,14 @@ label {
   background-color: rgba(0, 0, 0, 0.01);
 }
 
+.comment-form {
+  max-width: 700px;
+}
+.comment-form input[type='text'],
+.comment-form input[type='email'],
+.comment-form textarea {
+  width: 100%;
+}
 .comment-form .row {
   border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 24px 25px;
