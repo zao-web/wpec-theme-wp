@@ -128,6 +128,11 @@ class Simply_SVG_Icons {
 	<path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/>
 </svg>',
 
+		'chevron-down'      	 => /* material-design – chevron_dowbn */ '
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 12">
+	<polygon points="1319.899 365.778 1327.678 358 1329.799 360.121 1319.899 370.021 1310 360.121 1312.121 358" transform="translate(-1310 -358)"/>
+</svg>',
+
 		'check'                  => /* material-design – check */ '
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M0 0h24v24H0z" fill="none"></path>
