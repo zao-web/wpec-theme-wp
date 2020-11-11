@@ -2,85 +2,354 @@
 /* Menus: Base styles for full-width column menus.
 ---------------------------------------------------------------------------------------------------- */
 
-.main-menu {
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  display: none;
-
-  //Confirm original was 980px
-  @include media(desktop) {
-    display: flex;
-  }
-
-  @include media(mobile-max) {
-    text-align: center;
-  }
-
-  a {
-    float: left;
-    margin-right: 30px;
-    font-weight: 900;
-    color: $black;
-
-    @include media(mobile-max) {
-      float: none;
-      display: inline-block;
-      margin: 0 10px;
-    }
-
-    &:hover {
-      color: rgba($black, 0.5);
+.primary-menu {
+  &-wrapper {
+    .showing-menu-modal & {
+      display: none;
     }
   }
 }
 
-.menus {
-  // Individual menus.
 
-  .menu {
+/* Modal Menu --------------------------------- */
 
-    h3 {
-      color: rgba($black, 0.95);
+.menu-modal {
+  background: $white;
+  display: none;
+  opacity: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  bottom: 0;
+  left: -99999rem;
+  right: 99999rem;
+  top: 143px;
+  transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
+  z-index: 99;
+
+  &.active {
+    display: flex;
+    left: 0;
+    opacity: 1;
+    right: 0;
+    transition: opacity 0.25s ease-out;
+  }
+
+  .close-nav-toggle {
+    background: none;
+    position: absolute;
+    right: $size__spacing-unit;
+    top: 15px;
+  }
+
+  &-inner {
+    background: $white;
+    display: flex;
+    justify-content: stretch;
+    width: 100%;
+  }
+
+  .sub-menu {
+    display: none;
+    width: 100%;
+
+    &.active {
+      display: block;
     }
 
-    a {
-      color: rgba($black, 0.5);
+    &-toggle {
+      padding: 0 $size__spacing-unit;
+    }
+  }
+}
 
-      &:hover {
-        color: rgba($black, 0.95);
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.mobile-menu {
+  margin-top: 50px;
+}
+
+
+.modal-menu {
+  position: relative;
+  left: calc(50% - 50vw);
+  width: 100vw;
+
+  & > li {
+    &:last-child {
+      border-bottom: 1px solid rgba($black, .1);
+    }
+
+    & > .ancestor-wrapper {
+      & > a {
+        font-weight: $font__weight-bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  ul {
+    display: none;
+    margin: 0;
+    width: 100%;
+  }
+
+  li {
+    border-top: 1px solid rgba($black, .1);
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1;
+    justify-content: flex-start;
+    margin: 0;
+
+    &.current-menu-item,
+    &.current_page_ancestor {
+      & > .ancestor-wrapper {
+        & > a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .ancestor-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  a {
+    display: inline-block;
+    padding: $size__spacing-half $size__spacing-unit;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .sub-menu {
+    .sub-menu {
+      li {
+        border-left: 10px solid $black;
       }
     }
   }
 }
 
-/* Sub Menus: Used for the main header menu.
----------------------------------------------------------------------------------------------------- */
+.sub-menu-toggle {
+  background: none;
+  flex-shrink: 0;
 
-.sub-menu {
-  position: absolute;
-  top: 40px;
-  padding: 60px 0 0;
-  background-color: $white-gray;
-  border-top: 1px solid rgba($black, .05);
-  border-bottom: 1px solid rgba($black, .05);
-  opacity: 0;
-  visibility: hidden;
-  z-index: 400;
-
-  .menu-item-has-children:hover & {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  @include media(mobile-max) {
-    padding-bottom: 30px;
-  }
-
-  .menu {
-    margin-bottom: 60px;
-
-    @include media(mobile-max) {
-      margin-bottom: 30px;
+  &.active {
+    svg {
+      transform: rotate(180deg);
     }
   }
+
+  svg {
+    height: $size__spacing-half;
+    transition: transform 0.15s linear;
+    width: $size__spacing-half;
+  }
 }
+
+/* Main menu animation ----------------------- */
+
+.menu-wrapper {
+  &.is-toggling {
+    pointer-events: none;
+
+    .menu-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .toggling-target {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 1;
+
+      &.active {
+        opacity: 0;
+      }
+    }
+
+    .modal-menu {
+      & > li {
+        &:last-child {
+          li {
+            border-top-color: transparent;
+            border-bottom-width: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  &.is-animating {
+    .menu-item,
+    .toggling-target {
+      transition-duration: 250ms;
+
+      @media (prefers-reduced-motion: reduce) {
+        transition-duration: 1ms !important;
+      }
+    }
+
+    .menu-item {
+      transition-property: transform;
+    }
+
+    &.is-toggling {
+      .toggling-target {
+        display: block;
+        transition-property: opacity;
+        opacity: 0;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .menu-item {
+    position: relative;
+  }
+
+  .active {
+    display: block;
+  }
+}
+
+// The main menu.
+// .primary-menu {
+//   height: 40px;
+//   position: relative;
+//   float: left;
+//   margin: 30px 0 0 30px;
+//   padding-left: 30px;
+//   border-left: 1px solid $black;
+
+//   //Confirm original was 600px
+//   @include media(tablet-max) {
+//     background: $white;
+//     border: none;
+//     margin: 0;
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     top: 143px;
+//     right: 0;
+//   }
+
+//   a {
+//     float: left;
+//     margin-right: 30px;
+//     line-height: 40px;
+//     font-size: 12px;
+//     font-weight: 900;
+//     color: $black;
+//     text-transform: uppercase;
+
+//     &:hover {
+//       color: rgba($black, 0.5);
+//     }
+//   }
+// }
+
+// .main-menu {
+//   padding-bottom: 30px;
+//   margin-bottom: 30px;
+//   //display: none;
+
+//   //Confirm original was 980px
+//   @include media(desktop) {
+//     display: flex;
+//   }
+
+//   @include media(mobile-max) {
+//     text-align: center;
+//   }
+
+//   a {
+//     float: left;
+//     margin-right: 30px;
+//     font-weight: 900;
+//     color: $black;
+
+//     @include media(mobile-max) {
+//       float: none;
+//       display: inline-block;
+//       margin: 0 10px;
+//     }
+
+//     &:hover {
+//       color: rgba($black, 0.5);
+//     }
+//   }
+// }
+
+// .menus {
+//   // Individual menus.
+
+//   .menu {
+
+//     h3 {
+//       color: rgba($black, 0.95);
+//     }
+
+//     a {
+//       color: rgba($black, 0.5);
+
+//       &:hover {
+//         color: rgba($black, 0.95);
+//       }
+//     }
+//   }
+// }
+
+// /* Sub Menus: Used for the main header menu.
+// ---------------------------------------------------------------------------------------------------- */
+
+// .sub-menu {
+//   position: absolute;
+//   top: 40px;
+//   padding: 60px 0 0;
+//   background-color: $white-gray;
+//   border-top: 1px solid rgba($black, .05);
+//   border-bottom: 1px solid rgba($black, .05);
+//   opacity: 0;
+//   visibility: hidden;
+//   z-index: 400;
+
+//   .menu-item-has-children:hover & {
+//     opacity: 1;
+//     visibility: visible;
+//   }
+
+//   @include media(mobile-max) {
+//     padding-bottom: 30px;
+//   }
+
+//   .menu {
+//     margin-bottom: 60px;
+
+//     @include media(mobile-max) {
+//       margin-bottom: 30px;
+//     }
+//   }
+// }

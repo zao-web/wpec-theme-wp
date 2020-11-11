@@ -4,12 +4,22 @@
 
 #header {
   background-color: rgba($black, 0.015);
+  position: relative;
+  z-index: 1000;
 
   // Add the fadeindown animation.
 
   animation-name: fadeindown;
   animation-duration: .75s;
   animation-fill-mode: both;
+
+  .row {
+    .inner {
+      @include media(tablet-max) {
+        position: static; // Change position so mobile nav works
+      }
+    }
+  }
 
   // The upper header bar for social links (left) and user menu (right).
 
@@ -125,36 +135,6 @@
           display: block;
           float: left;
           margin: 8px 0 0 10px;
-        }
-      }
-    }
-
-    // The main menu.
-
-    nav {
-      height: 40px;
-      position: relative;
-      float: left;
-      margin: 30px 0 0 30px;
-      padding-left: 30px;
-      border-left: 1px solid $black;
-
-      //Confirm original was 600px
-      @include media(tablet-max) {
-        display: none;
-      }
-
-      a {
-        float: left;
-        margin-right: 30px;
-        line-height: 40px;
-        font-size: 12px;
-        font-weight: 900;
-        color: $black;
-        text-transform: uppercase;
-
-        &:hover {
-          color: rgba($black, 0.5);
         }
       }
     }
@@ -277,6 +257,10 @@
     min-width: 40px;
     width: auto;
   }
+}
+
+.nav-toggle {
+  background: none;
 }
 
 .menu-toggle {

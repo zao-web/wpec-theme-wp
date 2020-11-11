@@ -927,78 +927,188 @@ label {
 
 /* Menus: Base styles for full-width column menus.
 ---------------------------------------------------------------------------------------------------- */
-.main-menu {
-  padding-bottom: 30px;
-  margin-bottom: 30px;
+.showing-menu-modal .primary-menu-wrapper {
   display: none;
 }
-@media (min-width: 941px) {
-  .main-menu {
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-@media (max-width: 480px) {
-  .main-menu {
-    text-align: center;
-  }
-}
-.main-menu a {
-  float: left;
-  margin-right: 30px;
-  font-weight: 900;
-  color: #000;
-}
-@media (max-width: 480px) {
-  .main-menu a {
-    float: none;
-    display: inline-block;
-    margin: 0 10px;
-  }
-}
-.main-menu a:hover {
-  color: rgba(0, 0, 0, 0.5);
-}
 
-.menus .menu h3 {
-  color: rgba(0, 0, 0, 0.95);
-}
-.menus .menu a {
-  color: rgba(0, 0, 0, 0.5);
-}
-.menus .menu a:hover {
-  color: rgba(0, 0, 0, 0.95);
-}
-
-/* Sub Menus: Used for the main header menu.
----------------------------------------------------------------------------------------------------- */
-.sub-menu {
-  position: absolute;
-  top: 40px;
-  padding: 60px 0 0;
-  background-color: #fafafa;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+/* Modal Menu --------------------------------- */
+.menu-modal {
+  background: #fff;
+  display: none;
   opacity: 0;
-  visibility: hidden;
-  z-index: 400;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  bottom: 0;
+  left: -99999rem;
+  right: 99999rem;
+  top: 143px;
+  transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
+  z-index: 99;
 }
-.menu-item-has-children:hover .sub-menu {
+.menu-modal.active {
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
   opacity: 1;
-  visibility: visible;
+  right: 0;
+  transition: opacity 0.25s ease-out;
 }
-@media (max-width: 480px) {
-  .sub-menu {
-    padding-bottom: 30px;
+.menu-modal .close-nav-toggle {
+  background: none;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+}
+.menu-modal-inner {
+  background: #fff;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: stretch;
+      justify-content: stretch;
+  width: 100%;
+}
+.menu-modal .sub-menu {
+  display: none;
+  width: 100%;
+}
+.menu-modal .sub-menu.active {
+  display: block;
+}
+.menu-modal .sub-menu-toggle {
+  padding: 0 30px;
+}
+
+.menu-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.mobile-menu {
+  margin-top: 50px;
+}
+
+.modal-menu {
+  position: relative;
+  left: calc(50% - 50vw);
+  width: 100vw;
+}
+.modal-menu > li:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal-menu > li > .ancestor-wrapper > a {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.modal-menu ul {
+  display: none;
+  margin: 0;
+  width: 100%;
+}
+.modal-menu li {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  line-height: 1;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  margin: 0;
+}
+.modal-menu li.current-menu-item > .ancestor-wrapper > a, .modal-menu li.current_page_ancestor > .ancestor-wrapper > a {
+  text-decoration: underline;
+}
+.modal-menu .ancestor-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 100%;
+}
+.modal-menu a {
+  display: inline-block;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+.modal-menu a:focus, .modal-menu a:hover {
+  text-decoration: underline;
+}
+.modal-menu .sub-menu .sub-menu li {
+  border-left: 10px solid #000;
+}
+
+.sub-menu-toggle {
+  background: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.sub-menu-toggle.active svg {
+  transform: rotate(180deg);
+}
+.sub-menu-toggle svg {
+  height: 15px;
+  transition: transform 0.15s linear;
+  width: 15px;
+}
+
+/* Main menu animation ----------------------- */
+.menu-wrapper.is-toggling {
+  pointer-events: none;
+}
+.menu-wrapper.is-toggling .menu-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+}
+.menu-wrapper.is-toggling .toggling-target {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+.menu-wrapper.is-toggling .toggling-target.active {
+  opacity: 0;
+}
+.menu-wrapper.is-toggling .modal-menu > li:last-child li {
+  border-top-color: transparent;
+  border-bottom-width: 1px;
+}
+.menu-wrapper.is-animating .menu-item,
+.menu-wrapper.is-animating .toggling-target {
+  transition-duration: 250ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-wrapper.is-animating .menu-item,
+  .menu-wrapper.is-animating .toggling-target {
+    transition-duration: 1ms !important;
   }
 }
-.sub-menu .menu {
-  margin-bottom: 60px;
+.menu-wrapper.is-animating .menu-item {
+  transition-property: transform;
 }
-@media (max-width: 480px) {
-  .sub-menu .menu {
-    margin-bottom: 30px;
-  }
+.menu-wrapper.is-animating.is-toggling .toggling-target {
+  display: block;
+  transition-property: opacity;
+  opacity: 0;
+}
+.menu-wrapper.is-animating.is-toggling .toggling-target.active {
+  opacity: 1;
+}
+.menu-wrapper .menu-item {
+  position: relative;
+}
+.menu-wrapper .active {
+  display: block;
 }
 
 /* The Panel Class: Used for all panels (login forms, comment forms, etc.).
@@ -1185,9 +1295,16 @@ label {
 ---------------------------------------------------------------------------------------------------- */
 #header {
   background-color: rgba(0, 0, 0, 0.015);
+  position: relative;
+  z-index: 1000;
   animation-name: fadeindown;
   animation-duration: .75s;
   animation-fill-mode: both;
+}
+@media (max-width: 780px) {
+  #header .row .inner {
+    position: static;
+  }
 }
 #header .bar {
   height: 40px;
@@ -1282,31 +1399,6 @@ label {
     float: left;
     margin: 8px 0 0 10px;
   }
-}
-#header .main nav {
-  height: 40px;
-  position: relative;
-  float: left;
-  margin: 30px 0 0 30px;
-  padding-left: 30px;
-  border-left: 1px solid #000;
-}
-@media (max-width: 780px) {
-  #header .main nav {
-    display: none;
-  }
-}
-#header .main nav a {
-  float: left;
-  margin-right: 30px;
-  line-height: 40px;
-  font-size: 12px;
-  font-weight: 900;
-  color: #000;
-  text-transform: uppercase;
-}
-#header .main nav a:hover {
-  color: rgba(0, 0, 0, 0.5);
 }
 #header .main #search {
   width: 300px;
@@ -1408,6 +1500,10 @@ label {
   height: 100%;
   min-width: 40px;
   width: auto;
+}
+
+.nav-toggle {
+  background: none;
 }
 
 .menu-toggle {
