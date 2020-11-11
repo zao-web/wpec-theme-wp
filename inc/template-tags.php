@@ -209,3 +209,24 @@ if ( ! function_exists( 'simply_comment_count' ) ) :
 		}
 	}
 endif;
+
+/**
+ * Miscellaneous
+ */
+/**
+ * Toggle animation duration in milliseconds.
+ *
+ * @return integer Duration in milliseconds
+ */
+function simply_toggle_duration() {
+	/**
+	 * Filters the animation duration/speed used usually for submenu toggles.
+	 *
+	 * @since 1.0
+	 *
+	 * @param integer $duration Duration in milliseconds.
+	 */
+	$duration = apply_filters( 'simply_toggle_duration', 250 );
+
+	return $duration;
+}
