@@ -34,8 +34,23 @@
 
 				</ul>
 
-			</nav>
+			</nav><!-- mobile-menu -->
 
+			<?php if ( has_nav_menu( 'social' ) ) : ?>
+	            <nav class="social" aria-label="<?php esc_attr_e( 'Social Links Menu', 'simply' ); ?>">
+	              <?php
+	              wp_nav_menu(
+	                array(
+	                  'theme_location' => 'social',
+	                  'menu_class'     => 'social-links-menu',
+	                  'link_before'    => '<span class="screen-reader-text">',
+	                  'link_after'     => '</span>' . simply_get_icon_svg( 'link' ),
+	                  'depth'          => 1,
+	                )
+	              );
+	              ?>
+	            </nav><!-- .social-navigation -->
+	          <?php endif; ?>
 		</div><!-- .menu-wrapper -->
 
 	</div><!-- .menu-modal-inner -->
