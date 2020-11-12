@@ -4,6 +4,10 @@
 
 .primary-menu {
   &-wrapper {
+    @include media(tablet-max) {
+      display: none;
+    }
+
     .showing-menu-modal & {
       display: none;
     }
@@ -23,9 +27,13 @@
   bottom: 0;
   left: -99999rem;
   right: 99999rem;
-  top: 143px;
+  top: 143px + $size__wpadmin-bar-mobile;
   transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
   z-index: 99;
+
+  @include media(wp-admin) {
+    top: 143px + $size__wpadmin-bar-desktop;
+  }
 
   &.active {
     display: flex;
@@ -70,11 +78,6 @@
   position: relative;
   width: 100%;
 }
-
-.mobile-menu {
-  margin-top: 50px;
-}
-
 
 .modal-menu {
   position: relative;
