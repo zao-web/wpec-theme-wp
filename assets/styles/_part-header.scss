@@ -13,6 +13,14 @@
   animation-duration: .75s;
   animation-fill-mode: both;
 
+  .showing-menu-modal & {
+    margin-top: $size__wpadmin-bar-mobile;
+
+    @include media(wp-admin) {
+      margin-top: $size__wpadmin-bar-desktop;
+    }
+  }
+
   .row {
     .inner {
       @include media(tablet-max) {
@@ -269,7 +277,74 @@
   //Confirm original was 600px
   @include media(tablet-max) {
     display: block;
-    float: left;
-    margin: 8px 0 0 10px;
+  }
+}
+
+// Hamburger Button
+.menu-toggle {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  padding: $size__spacing-half;
+
+  &:focus {
+    //outline: none;
+  }
+
+  @include media(tablet) {
+    padding: 0 $size__spacing-unit;
+  }
+
+  @include media(wide) {
+    display: none;
+  }
+
+  .showing-menu-modal & {
+    .menu-bars {
+      background-color: transparent;
+
+      &:before,
+      &:after {
+        background-color: $black;
+      }
+
+      &:before {
+        animation: $menu-toggle-top-open;
+      }
+
+      &:after {
+        animation: $menu-toggle-bottom-open;
+      }
+    }
+  }
+
+  .menu-bars {
+    background-color: $black;
+    display: block;
+    height: $size__hamburger-height;
+    position: relative;
+    transition-delay: $hamburger_delay;
+    width: $size__hamburger-width;
+
+    &:before,
+    &:after {
+      background-color: $black;
+      content: '';
+      height: $size__hamburger-height;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    &:before {
+      animation: $menu-toggle-top-close;
+      top: -$size__offsetY;
+    }
+
+    &:after {
+      animation: $menu-toggle-bottom-close;
+      top: $size__offsetY;
+    }
   }
 }

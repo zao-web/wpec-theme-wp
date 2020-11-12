@@ -78,15 +78,9 @@
               <?php endif; ?>
             <?php endif; ?>
 
-            <button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
-              <span class="toggle-inner">
-                <span class="toggle-icon">
-                  <span class="toggle-text screen-reader-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
-                  <svg class="menu-toggle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                  </svg>
-                </span>
-              </span>
+            <button class="toggle nav-toggle menu-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+              <span class="screen-reader-text"><?php esc_html_e( 'menu', 'zao-theme' ); ?></span>
+              <span aria-hidden="true" class="menu-bars"></span>
             </button><!-- .nav-toggle -->
 
           </div>

@@ -42,12 +42,15 @@ $font__weight-bold: 900;
 
 $header-font-family: 'Lora', serif;
 
-
 //Spacing
 $size__spacing-unit: 30px;
 $size__spacing-half: $size__spacing-unit / 2;
 $size__wpadmin-bar-mobile: 46px;
 $size__wpadmin-bar-desktop: 32px;
+
+$size__hamburger-height: 2px;
+$size__hamburger-width: 20px;
+$size__offsetY: 5px;
 
 // Breakpoint widths.
 $mobile_width: 480px;
@@ -55,3 +58,60 @@ $tablet_width: 780px;
 $desktop_width: 940px;
 $wpadmin_width: 782px;
 
+// Transitions
+$hamburger_delay: 250ms;
+$hamburger_spin: $hamburger_delay * 2;
+$menu-toggle-top-open: animate-top-line-open $hamburger_spin ease-in-out forwards;
+$menu-toggle-bottom-open: animate-bottom-line-open $hamburger_spin ease-in-out forwards;
+$menu-toggle-top-close: animate-top-line-close $hamburger_spin ease-in-out forwards;
+$menu-toggle-bottom-close: animate-bottom-line-close $hamburger_spin ease-in-out forwards;
+
+
+// Key Frames
+@keyframes animate-top-line-open {
+	0% {
+		transform: translate(0, 0) rotate(0);
+	}
+	50% {
+		transform: translate(0, $size__offsetY) rotate(0);
+	}
+	100% {
+		transform: translate(0, $size__offsetY) rotate(-45deg);
+	}
+}
+
+@keyframes animate-top-line-close {
+	0% {
+		transform: translate(0, $size__offsetY) rotate(-45deg);
+	}
+	50% {
+		transform: translate(0, $size__offsetY) rotate(0);
+	}
+	100% {
+		transform: translate(0, 0) rotate(0);
+	}
+}
+
+@keyframes animate-bottom-line-open {
+	0% {
+		transform: translate(0, 0) rotate(0);
+	}
+	50% {
+		transform: translate(0, -$size__offsetY) rotate(0);
+	}
+	100% {
+		transform: translate(0, -$size__offsetY) rotate(-135deg);
+	}
+}
+
+@keyframes animate-bottom-line-close {
+	0% {
+		transform: translate(0, -$size__offsetY) rotate(-135deg);
+	}
+	50% {
+		transform: translate(0, -$size__offsetY) rotate(0);
+	}
+	100% {
+		transform: translate(0, 0) rotate(0);
+	}
+}
