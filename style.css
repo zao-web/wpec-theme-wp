@@ -79,6 +79,50 @@ input {
 
 /* Variables
 ---------------------------------------------------------------------------------------------------- */
+@keyframes animate-top-line-open {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  50% {
+    transform: translate(0, 5px) rotate(0);
+  }
+  100% {
+    transform: translate(0, 5px) rotate(-45deg);
+  }
+}
+@keyframes animate-top-line-close {
+  0% {
+    transform: translate(0, 5px) rotate(-45deg);
+  }
+  50% {
+    transform: translate(0, 5px) rotate(0);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+@keyframes animate-bottom-line-open {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  50% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  100% {
+    transform: translate(0, -5px) rotate(-135deg);
+  }
+}
+@keyframes animate-bottom-line-close {
+  0% {
+    transform: translate(0, -5px) rotate(-135deg);
+  }
+  50% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
 /* Global Extensions
 ---------------------------------------------------------------------------------------------------- */
 .button:hover, .cart .overview .row.product .actions a:hover, #cart .button:hover, .discussion-meta .shared-counts-wrap.style-buttons .shared-counts-button.facebook:hover, .discussion-meta .shared-counts-wrap.style-buttons .shared-counts-button.twitter:hover {
@@ -927,6 +971,11 @@ label {
 
 /* Menus: Base styles for full-width column menus.
 ---------------------------------------------------------------------------------------------------- */
+@media (max-width: 780px) {
+  .primary-menu-wrapper {
+    display: none;
+  }
+}
 .showing-menu-modal .primary-menu-wrapper {
   display: none;
 }
@@ -942,9 +991,14 @@ label {
   bottom: 0;
   left: -99999rem;
   right: 99999rem;
-  top: 143px;
+  top: 189px;
   transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
   z-index: 99;
+}
+@media (min-width: 782px) {
+  .menu-modal {
+    top: 175px;
+  }
 }
 .menu-modal.active {
   display: -ms-flexbox;
@@ -978,20 +1032,29 @@ label {
 .menu-modal .sub-menu-toggle {
   padding: 0 30px;
 }
+.menu-modal .social-links-menu {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 15px;
+}
+.menu-modal .social-links-menu a {
+  display: block;
+  padding: 15px;
+}
+.menu-modal .social-links-menu svg {
+  height: 20px;
+  width: 20px;
+}
 
 .menu-wrapper {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
   position: relative;
   width: 100%;
-}
-
-.mobile-menu {
-  margin-top: 50px;
 }
 
 .modal-menu {
@@ -1301,6 +1364,14 @@ label {
   animation-duration: .75s;
   animation-fill-mode: both;
 }
+.showing-menu-modal #header {
+  margin-top: 46px;
+}
+@media (min-width: 782px) {
+  .showing-menu-modal #header {
+    margin-top: 32px;
+  }
+}
 @media (max-width: 780px) {
   #header .row .inner {
     position: static;
@@ -1512,9 +1583,58 @@ label {
 @media (max-width: 780px) {
   .menu-toggle {
     display: block;
-    float: left;
-    margin: 8px 0 0 10px;
   }
+}
+
+.menu-toggle {
+  -ms-flex-align: center;
+      align-items: center;
+  cursor: pointer;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+}
+@media (min-width: 781px) {
+  .menu-toggle {
+    padding: 0 30px;
+  }
+}
+.showing-menu-modal .menu-toggle .menu-bars {
+  background-color: transparent;
+}
+.showing-menu-modal .menu-toggle .menu-bars:before, .showing-menu-modal .menu-toggle .menu-bars:after {
+  background-color: #000;
+}
+.showing-menu-modal .menu-toggle .menu-bars:before {
+  animation: animate-top-line-open 500ms ease-in-out forwards;
+}
+.showing-menu-modal .menu-toggle .menu-bars:after {
+  animation: animate-bottom-line-open 500ms ease-in-out forwards;
+}
+.menu-toggle .menu-bars {
+  background-color: #000;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition-delay: 250ms;
+  width: 20px;
+}
+.menu-toggle .menu-bars:before, .menu-toggle .menu-bars:after {
+  background-color: #000;
+  content: '';
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.menu-toggle .menu-bars:before {
+  animation: animate-top-line-close 500ms ease-in-out forwards;
+  top: -5px;
+}
+.menu-toggle .menu-bars:after {
+  animation: animate-bottom-line-close 500ms ease-in-out forwards;
+  top: 5px;
 }
 
 /* The Footer
