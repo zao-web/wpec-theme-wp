@@ -62,6 +62,10 @@ $xlarge_width: 1140px;
 $wpadmin_width: 782px;
 
 // Transitions
+$fade_transition: 250ms;
+$fadeinup_transition: 750ms;
+$fadeindown_transition: 500ms;
+$slide_transition: 500ms;
 $hamburger_delay: 250ms;
 $hamburger_spin: $hamburger_delay * 2;
 $menu-toggle-top-open: animate-top-line-open $hamburger_spin ease-in-out forwards;
