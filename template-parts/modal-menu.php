@@ -17,7 +17,7 @@
 
 			<nav class="mobile-menu" aria-label="<?php esc_attr_e( 'Mobile', 'simply' ); ?>" role="navigation">
 
-				<ul class="modal-menu reset-list-style">
+				<ul class="modal-menu main-menu reset-list-style">
 
 				<?php
 

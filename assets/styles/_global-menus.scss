@@ -1,8 +1,17 @@
 
-/* Menus: Base styles for full-width column menus.
+/* Menus:
 ---------------------------------------------------------------------------------------------------- */
 
 .primary-menu {
+  border-left: 1px solid $black;
+  display: flex;
+  align-items: center;
+  float: left;
+  height: 40px;
+  margin: $size__spacing-unit 0 0 $size__spacing-unit;
+  position: relative;
+  padding-left: $size__spacing-unit;
+
   &-wrapper {
     @include media(xlarge-max) {
       display: none;
@@ -10,6 +19,139 @@
 
     .showing-menu-modal & {
       display: none;
+    }
+  }
+
+  & > li {
+    margin-right: $size__spacing-unit;
+
+    & > a {
+      font-size: 12px;
+      font-weight: $font__weight-bold;
+    }
+  }
+
+  a {
+    color: $black;
+
+    &:hover,
+    &:focus {
+      color: rgba($black, 0.5);
+    }
+  }
+
+  // /* Sub Menus: Used for the main header menu.
+  // ---------------------------------------------------------------------------------------------------- */
+
+  & > li {
+    & > .sub-menu {
+      background-color: $white-gray;
+      border-top: 1px solid rgba($black, .05);
+      border-bottom: 1px solid rgba($black, .05);
+      display: flex;
+      margin-left: -50vw;
+      padding: $size__spacing-unit 0 $size__spacing-unit 50vw;
+      position: absolute;
+      top: 70px;
+      width: 200vw;
+      z-index: 400;
+
+      // Make top menu item hover more functional
+      &:before {
+        content: '';
+        height: 60px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -40px;
+        z-index: 100;
+      }
+
+      & > li {
+        margin-right: $size__spacing-unit;
+
+        & > .ancestor-wrapper {
+          font-weight: $font__weight-bold;
+        }
+      }
+    }
+  }
+
+  .menu-item-has-children {
+    &:hover,
+    &:focus {
+      .sub-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .sub-menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: all $fade_transition ease-in;
+
+    .menu {
+      margin-bottom: 60px;
+    }
+
+    button {
+      display: none;
+    }
+  }
+}
+
+// /* Main Menu: Syles shared by both main menu and mobile main menu
+// ---------------------------------------------------------------------------------------------------- */
+
+.main-menu {
+  & > li {
+    & > .ancestor-wrapper {
+      & > a {
+        font-weight: $font__weight-bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  li {
+    &.current-menu-item,
+    &.current_page_ancestor {
+      & > .ancestor-wrapper {
+        & > a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .ancestor-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    a {
+      margin-right: $size__spacing-quarter;
+    }
+  }
+}
+
+.menus {
+  // Individual menus.
+
+  .menu {
+
+    h3 {
+      color: rgba($black, 0.95);
+    }
+
+    a {
+      color: rgba($black, 0.5);
+
+      &:hover {
+        color: rgba($black, 0.95);
+      }
     }
   }
 }
@@ -41,6 +183,10 @@
     opacity: 1;
     right: 0;
     transition: opacity 0.25s ease-out;
+  }
+
+  .ancestor-wrapper {
+    justify-content: space-between;
   }
 
   .close-nav-toggle {
@@ -108,13 +254,6 @@
     &:last-child {
       border-bottom: 1px solid rgba($black, .1);
     }
-
-    & > .ancestor-wrapper {
-      & > a {
-        font-weight: $font__weight-bold;
-        text-transform: uppercase;
-      }
-    }
   }
 
   ul {
@@ -130,21 +269,6 @@
     line-height: 1;
     justify-content: flex-start;
     margin: 0;
-
-    &.current-menu-item,
-    &.current_page_ancestor {
-      & > .ancestor-wrapper {
-        & > a {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  .ancestor-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
   }
 
   a {
@@ -169,6 +293,7 @@
 
 .sub-menu-toggle {
   background: none;
+  display: flex;
   flex-shrink: 0;
 
   &.active {
@@ -258,121 +383,3 @@
   }
 }
 
-// The main menu.
-// .primary-menu {
-//   height: 40px;
-//   position: relative;
-//   float: left;
-//   margin: 30px 0 0 30px;
-//   padding-left: 30px;
-//   border-left: 1px solid $black;
-
-//   //Confirm original was 600px
-//   @include media(tablet-max) {
-//     background: $white;
-//     border: none;
-//     margin: 0;
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//     top: 143px;
-//     right: 0;
-//   }
-
-//   a {
-//     float: left;
-//     margin-right: 30px;
-//     line-height: 40px;
-//     font-size: 12px;
-//     font-weight: 900;
-//     color: $black;
-//     text-transform: uppercase;
-
-//     &:hover {
-//       color: rgba($black, 0.5);
-//     }
-//   }
-// }
-
-// .main-menu {
-//   padding-bottom: 30px;
-//   margin-bottom: 30px;
-//   //display: none;
-
-//   //Confirm original was 980px
-//   @include media(desktop) {
-//     display: flex;
-//   }
-
-//   @include media(mobile-max) {
-//     text-align: center;
-//   }
-
-//   a {
-//     float: left;
-//     margin-right: 30px;
-//     font-weight: 900;
-//     color: $black;
-
-//     @include media(mobile-max) {
-//       float: none;
-//       display: inline-block;
-//       margin: 0 10px;
-//     }
-
-//     &:hover {
-//       color: rgba($black, 0.5);
-//     }
-//   }
-// }
-
-// .menus {
-//   // Individual menus.
-
-//   .menu {
-
-//     h3 {
-//       color: rgba($black, 0.95);
-//     }
-
-//     a {
-//       color: rgba($black, 0.5);
-
-//       &:hover {
-//         color: rgba($black, 0.95);
-//       }
-//     }
-//   }
-// }
-
-// /* Sub Menus: Used for the main header menu.
-// ---------------------------------------------------------------------------------------------------- */
-
-// .sub-menu {
-//   position: absolute;
-//   top: 40px;
-//   padding: 60px 0 0;
-//   background-color: $white-gray;
-//   border-top: 1px solid rgba($black, .05);
-//   border-bottom: 1px solid rgba($black, .05);
-//   opacity: 0;
-//   visibility: hidden;
-//   z-index: 400;
-
-//   .menu-item-has-children:hover & {
-//     opacity: 1;
-//     visibility: visible;
-//   }
-
-//   @include media(mobile-max) {
-//     padding-bottom: 30px;
-//   }
-
-//   .menu {
-//     margin-bottom: 60px;
-
-//     @include media(mobile-max) {
-//       margin-bottom: 30px;
-//     }
-//   }
-// }

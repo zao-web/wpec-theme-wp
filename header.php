@@ -91,7 +91,7 @@
 
             <nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Main Menu', 'simply' ); ?>" role="navigation">
 
-                <ul class="primary-menu reset-list-style">
+                <ul class="primary-menu main-menu reset-list-style">
 
                 <?php
 
