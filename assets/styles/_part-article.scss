@@ -7,7 +7,7 @@
 
   // Add the fadeinup animation.
   animation-name: fadeinup;
-  animation-duration: .75s;
+  animation-duration: $fadeinup_transition;
   animation-fill-mode: both;
 
   .post {
@@ -36,7 +36,7 @@
       margin-bottom: 37px;
       font-size: 12px;
       text-transform: uppercase;
-      font-weight: 900;
+      font-weight: $font__weight-bold;
     }
 
     h1 {
@@ -254,7 +254,7 @@
       margin-bottom: 14px;
       font-size: 12px;
       text-transform: uppercase;
-      font-weight: 900;
+      font-weight: $font__weight-bold;
     }
 
     .widget {
@@ -304,7 +304,7 @@
         height: 30px;
         position: relative;
         background-color: rgba($black, 0.9);
-        font-weight: 900;
+        font-weight: $font__weight-bold;
         line-height: 29px;
         color: rgba($white, 0.5);
 

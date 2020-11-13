@@ -1862,7 +1862,7 @@ label {
 .article {
   padding: 100px 0 79px;
   animation-name: fadeinup;
-  animation-duration: .75s;
+  animation-duration: 750ms;
   animation-fill-mode: both;
 }
 .article .post {
@@ -2430,7 +2430,7 @@ label {
 #product {
   padding: 100px 0;
   animation-name: fadeinup;
-  animation-duration: .75s;
+  animation-duration: 750ms;
   animation-fill-mode: both;
 }
 #product .gallery {
@@ -2797,7 +2797,7 @@ label {
 #thanks {
   padding: 100px 0 120px;
   animation-name: fadeinup;
-  animation-duration: .75s;
+  animation-duration: 750ms;
   animation-fill-mode: both;
 }
 #thanks header {

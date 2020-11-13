@@ -92,7 +92,7 @@ label {
   
         h3 {
           font-size: 18px;
-          font-weight: 900;
+          font-weight: $font__weight-bold;
         }
         
         p {
@@ -163,7 +163,7 @@ label {
   
           label {
             font-size: 12px;
-            font-weight: 900;
+            font-weight: $font__weight-bold;
             line-height: 1;
             text-transform: uppercase;
             width: 100%;
@@ -189,7 +189,7 @@ label {
             .meta {
               float: right;
               font-size: 12px;
-              font-weight: 900;
+              font-weight: $font__weight-bold;
             }
             
             input[type=radio] {

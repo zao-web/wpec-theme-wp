@@ -24,13 +24,13 @@
         padding-top: 7px;
 
         .label {
-          font-weight: 900;
+          font-weight: $font__weight-bold;
         }
       }
 
       .price {
         float: right;
-        font-weight: 900;
+        font-weight: $font__weight-bold;
       }
 
       // Product specific.
@@ -141,7 +141,7 @@
 
         .label,
         .price {
-          font-weight: 900;
+          font-weight: $font__weight-bold;
         }
       }
     }

@@ -8,7 +8,7 @@
   // Add the fadeinup animation.
   
   animation-name: fadeinup;
-  animation-duration: .75s;
+  animation-duration: $fadeinup_transition;
   animation-fill-mode: both;
   
   header {
@@ -27,7 +27,7 @@
       margin-bottom: 24px;
       
       h4 {
-        font-weight: 900;
+        font-weight: $font__weight-bold;
       }
       
       p {
@@ -47,7 +47,7 @@
     
     h3 {
       font-size: 12px;
-      font-weight: 900;
+      font-weight: $font__weight-bold;
       text-transform: uppercase;
     }
     
@@ -67,7 +67,7 @@
       
       h4 {
         font-size: 18px;
-        font-weight: 900;
+        font-weight: $font__weight-bold;
       }
     }
   }

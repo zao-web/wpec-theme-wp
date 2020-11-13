@@ -8,7 +8,7 @@
   // Add the fadeinuo animation.
   
   animation-name: fadeinup;
-  animation-duration: .75s;
+  animation-duration: $fadeinup_transition;
   animation-fill-mode: both;
   
   // The product gallery.
@@ -114,7 +114,7 @@
         padding-bottom: 8px;
         border-bottom: 1px solid rgba($black, .05);
         font-size: 12px;
-        font-weight: 900;
+        font-weight: $font__weight-bold;
         color: $black;
         text-transform: uppercase;
       }
