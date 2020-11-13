@@ -36,6 +36,18 @@
 		}
 	}
 
+	@if xlarge == $res {
+		@media (min-width: $xlarge_width + 1) {
+			@content;
+		}
+	}
+
+	@if xlarge-max == $res {
+		@media (max-width: $xlarge_width) {
+			@content;
+		}
+	}
+
 	@if wp-admin == $res {
 		@media (min-width: $wpadmin_width) {
 			@content;
