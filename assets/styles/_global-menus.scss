@@ -4,7 +4,7 @@
 
 .primary-menu {
   &-wrapper {
-    @include media(tablet-max) {
+    @include media(xlarge-max) {
       display: none;
     }
 
@@ -75,9 +75,14 @@
     flex-wrap: wrap;
     padding: 0 $size__spacing-half;
 
+    @include media(tablet) {
+      display: none;
+    }
+
     a {
       display: block;
       padding: $size__spacing-half;
+      margin-right: $size__spacing-half;
     }
 
     svg {

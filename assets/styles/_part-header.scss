@@ -69,6 +69,10 @@
           fill: $white;
         }
       }
+
+      @include media (tablet-max) {
+        display: none;
+      }
     }
 
     #menu-social {
@@ -146,91 +150,6 @@
         }
       }
     }
-
-    // The search field.
-
-    #search {
-      width: 300px;
-      height: 40px;
-      position: absolute;
-      top: 30px;
-      right: 0;
-
-      input {
-        width: 100%;
-        height: 40px;
-        float: left;
-        padding: 0 20px;
-        background-color: $white;
-        border: 1px solid rgba($black, 0.075);
-        border-radius: 20px;
-        line-height: 40px;
-        transition-duration: 0.25s;
-      }
-
-      .search-submit {
-        background: $black url('assets/images/svg-icons/search.svg') center center no-repeat;
-        background-size: 20px;
-        border-radius: 50%;
-        color: $black;
-        cursor: pointer;
-        font-size: 1px;
-        height: 40px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 40px;
-        transition: .25s;
-        z-index: 10;
-
-        &:hover {
-          right: -3px;
-        }
-
-        &.toggle {
-          visibility: hidden;
-        }
-
-        svg {
-          height: 20px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          fill: $white;
-        }
-      }
-
-      //Confirm original was 980px
-      @include media(desktop-max) {
-        width: 40px;
-
-        input {
-          visibility: hidden;
-        }
-
-        .submit {
-          &.toggle {
-            visibility: visible;
-            z-index: 20;
-          }
-        }
-
-        &.toggled {
-          width: calc(100% + 2px);
-
-          input {
-            visibility: visible;
-          }
-
-          .submit {
-            &.toggle {
-              visibility: hidden;
-            }
-          }
-        }
-      }
-    }
   }
 }
 
@@ -271,21 +190,16 @@
   background: none;
 }
 
-.menu-toggle {
-  display: none;
-
-  //Confirm original was 600px
-  @include media(tablet-max) {
-    display: block;
-  }
-}
-
 // Hamburger Button
 .menu-toggle {
   align-items: center;
   cursor: pointer;
   display: flex;
   padding: $size__spacing-half;
+
+  @include media(xlarge) {
+    display: none;
+  }
 
   &:focus {
     //outline: none;

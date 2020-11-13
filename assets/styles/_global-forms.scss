@@ -295,3 +295,73 @@ label {
 .comments-title {
   margin: 30px 0;
 }
+
+// Search form
+
+// The search field.
+
+#search {
+  height: 40px;
+  position: relative;
+
+  .menu-modal & {
+    margin: $size__spacing-half $size__spacing-unit;
+    max-width: 450px;
+
+    @include media(tablet) {
+      display: none;
+    }
+  }
+
+  #header & {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 300px;
+
+    @include media(tablet-max) {
+      display: none;
+    }
+  }
+
+  input {
+    width: 100%;
+    height: 40px;
+    float: left;
+    padding: 0 20px;
+    background-color: $white;
+    border: 1px solid rgba($black, 0.075);
+    border-radius: 20px;
+    line-height: 40px;
+    transition-duration: 0.25s;
+  }
+
+  .search-submit {
+    background: $black url('assets/images/svg-icons/search.svg') center center no-repeat;
+    background-size: 20px;
+    border-radius: 50%;
+    color: $black;
+    cursor: pointer;
+    font-size: 1px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    transition: .25s;
+    z-index: 10;
+
+    &:hover {
+      right: -3px;
+    }
+
+    svg {
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      fill: $white;
+    }
+  }
+}

@@ -51,6 +51,14 @@
 	              ?>
 	            </nav><!-- .social-navigation -->
 	          <?php endif; ?>
+
+	          <?php
+	          // Check whether the header search is activated in the customizer.
+	          $enable_header_search = get_theme_mod( 'enable_header_search', true );
+
+	          if ( true === $enable_header_search ) {
+	            get_search_form();
+	          } ?>
 		</div><!-- .menu-wrapper -->
 
 	</div><!-- .menu-modal-inner -->
