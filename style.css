@@ -871,6 +871,68 @@ label {
   margin: 30px 0;
 }
 
+#search {
+  height: 40px;
+  position: relative;
+}
+.menu-modal #search {
+  margin: 15px 30px;
+  max-width: 450px;
+}
+@media (min-width: 781px) {
+  .menu-modal #search {
+    display: none;
+  }
+}
+#header #search {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 300px;
+}
+@media (max-width: 780px) {
+  #header #search {
+    display: none;
+  }
+}
+#search input {
+  width: 100%;
+  height: 40px;
+  float: left;
+  padding: 0 20px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  border-radius: 20px;
+  line-height: 40px;
+  transition-duration: 0.25s;
+}
+#search .search-submit {
+  background: #000 url("assets/images/svg-icons/search.svg") center center no-repeat;
+  background-size: 20px;
+  border-radius: 50%;
+  color: #000;
+  cursor: pointer;
+  font-size: 1px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  transition: .25s;
+  z-index: 10;
+}
+#search .search-submit:hover {
+  right: -3px;
+}
+#search .search-submit svg {
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: #fff;
+}
+
 /* Global Containers: The primary containers used for wrapping most content.
 ---------------------------------------------------------------------------------------------------- */
 .row {
@@ -971,7 +1033,7 @@ label {
 
 /* Menus: Base styles for full-width column menus.
 ---------------------------------------------------------------------------------------------------- */
-@media (max-width: 780px) {
+@media (max-width: 1140px) {
   .primary-menu-wrapper {
     display: none;
   }
@@ -1039,9 +1101,15 @@ label {
       flex-wrap: wrap;
   padding: 0 15px;
 }
+@media (min-width: 781px) {
+  .menu-modal .social-links-menu {
+    display: none;
+  }
+}
 .menu-modal .social-links-menu a {
   display: block;
   padding: 15px;
+  margin-right: 15px;
 }
 .menu-modal .social-links-menu svg {
   height: 20px;
@@ -1409,6 +1477,11 @@ label {
   width: 14px;
   fill: #fff;
 }
+@media (max-width: 780px) {
+  #header .bar .social {
+    display: none;
+  }
+}
 #header .bar #menu-social {
   display: -ms-flexbox;
   display: flex;
@@ -1471,74 +1544,6 @@ label {
     margin: 8px 0 0 10px;
   }
 }
-#header .main #search {
-  width: 300px;
-  height: 40px;
-  position: absolute;
-  top: 30px;
-  right: 0;
-}
-#header .main #search input {
-  width: 100%;
-  height: 40px;
-  float: left;
-  padding: 0 20px;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.075);
-  border-radius: 20px;
-  line-height: 40px;
-  transition-duration: 0.25s;
-}
-#header .main #search .search-submit {
-  background: #000 url("assets/images/svg-icons/search.svg") center center no-repeat;
-  background-size: 20px;
-  border-radius: 50%;
-  color: #000;
-  cursor: pointer;
-  font-size: 1px;
-  height: 40px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  transition: .25s;
-  z-index: 10;
-}
-#header .main #search .search-submit:hover {
-  right: -3px;
-}
-#header .main #search .search-submit.toggle {
-  visibility: hidden;
-}
-#header .main #search .search-submit svg {
-  height: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  fill: #fff;
-}
-@media (max-width: 940px) {
-  #header .main #search {
-    width: 40px;
-  }
-  #header .main #search input {
-    visibility: hidden;
-  }
-  #header .main #search .submit.toggle {
-    visibility: visible;
-    z-index: 20;
-  }
-  #header .main #search.toggled {
-    width: calc(100% + 2px);
-  }
-  #header .main #search.toggled input {
-    visibility: visible;
-  }
-  #header .main #search.toggled .submit.toggle {
-    visibility: hidden;
-  }
-}
 
 .site-branding {
   display: -ms-inline-flexbox;
@@ -1578,21 +1583,17 @@ label {
 }
 
 .menu-toggle {
-  display: none;
-}
-@media (max-width: 780px) {
-  .menu-toggle {
-    display: block;
-  }
-}
-
-.menu-toggle {
   -ms-flex-align: center;
       align-items: center;
   cursor: pointer;
   display: -ms-flexbox;
   display: flex;
   padding: 15px;
+}
+@media (min-width: 1141px) {
+  .menu-toggle {
+    display: none;
+  }
 }
 @media (min-width: 781px) {
   .menu-toggle {
