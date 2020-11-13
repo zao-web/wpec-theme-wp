@@ -79,50 +79,6 @@ input {
 
 /* Variables
 ---------------------------------------------------------------------------------------------------- */
-@keyframes animate-top-line-open {
-  0% {
-    transform: translate(0, 0) rotate(0);
-  }
-  50% {
-    transform: translate(0, 5px) rotate(0);
-  }
-  100% {
-    transform: translate(0, 5px) rotate(-45deg);
-  }
-}
-@keyframes animate-top-line-close {
-  0% {
-    transform: translate(0, 5px) rotate(-45deg);
-  }
-  50% {
-    transform: translate(0, 5px) rotate(0);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0);
-  }
-}
-@keyframes animate-bottom-line-open {
-  0% {
-    transform: translate(0, 0) rotate(0);
-  }
-  50% {
-    transform: translate(0, -5px) rotate(0);
-  }
-  100% {
-    transform: translate(0, -5px) rotate(-135deg);
-  }
-}
-@keyframes animate-bottom-line-close {
-  0% {
-    transform: translate(0, -5px) rotate(-135deg);
-  }
-  50% {
-    transform: translate(0, -5px) rotate(0);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0);
-  }
-}
 /* Global Extensions
 ---------------------------------------------------------------------------------------------------- */
 .button:hover, .cart .overview .row.product .actions a:hover, #cart .button:hover, .discussion-meta .shared-counts-wrap.style-buttons .shared-counts-button.facebook:hover, .discussion-meta .shared-counts-wrap.style-buttons .shared-counts-button.twitter:hover {
@@ -169,7 +125,7 @@ input {
 ---------------------------------------------------------------------------------------------------- */
 .fadein {
   animation-name: fadein;
-  animation-duration: .25s;
+  animation-duration: 250ms;
   animation-fill-mode: both;
 }
 
@@ -187,7 +143,7 @@ input {
 ---------------------------------------------------------------------------------------------------- */
 .fadeout {
   animation-name: fadeout;
-  animation-duration: .25s;
+  animation-duration: 250ms;
   animation-fill-mode: both;
 }
 
@@ -208,7 +164,7 @@ input {
 ---------------------------------------------------------------------------------------------------- */
 .fadeinup {
   animation-name: fadeinup;
-  animation-duration: .75s;
+  animation-duration: 750ms;
   animation-fill-mode: both;
 }
 
@@ -226,7 +182,7 @@ input {
 ---------------------------------------------------------------------------------------------------- */
 .fadeindown {
   animation-name: fadeindown;
-  animation-duration: .5s;
+  animation-duration: 500ms;
   animation-fill-mode: both;
 }
 
@@ -244,7 +200,7 @@ input {
 ---------------------------------------------------------------------------------------------------- */
 .slideinright {
   animation-name: slideinright;
-  animation-duration: .5s;
+  animation-duration: 500ms;
   animation-fill-mode: both;
 }
 
@@ -318,6 +274,58 @@ input {
   100% {
     transform: translateX(5px);
     opacity: 1;
+  }
+}
+/* Top Line Open
+---------------------------------------------------------------------------------------------------- */
+@keyframes animate-top-line-open {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  50% {
+    transform: translate(0, 5px) rotate(0);
+  }
+  100% {
+    transform: translate(0, 5px) rotate(-45deg);
+  }
+}
+/* Top Line Close
+---------------------------------------------------------------------------------------------------- */
+@keyframes animate-top-line-close {
+  0% {
+    transform: translate(0, 5px) rotate(-45deg);
+  }
+  50% {
+    transform: translate(0, 5px) rotate(0);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+/* Bottom Line Open
+---------------------------------------------------------------------------------------------------- */
+@keyframes animate-bottom-line-open {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  50% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  100% {
+    transform: translate(0, -5px) rotate(-135deg);
+  }
+}
+/* Bottom Line Close
+---------------------------------------------------------------------------------------------------- */
+@keyframes animate-bottom-line-close {
+  0% {
+    transform: translate(0, -5px) rotate(-135deg);
+  }
+  50% {
+    transform: translate(0, -5px) rotate(0);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
   }
 }
 /* Base Typography: Nothing much here.
@@ -1031,8 +1039,20 @@ label {
   max-width: 100vw;
 }
 
-/* Menus: Base styles for full-width column menus.
+/* Menus:
 ---------------------------------------------------------------------------------------------------- */
+.primary-menu {
+  border-left: 1px solid #000;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  float: left;
+  height: 40px;
+  margin: 30px 0 0 30px;
+  position: relative;
+  padding-left: 30px;
+}
 @media (max-width: 1140px) {
   .primary-menu-wrapper {
     display: none;
@@ -1040,6 +1060,90 @@ label {
 }
 .showing-menu-modal .primary-menu-wrapper {
   display: none;
+}
+.primary-menu > li {
+  margin-right: 30px;
+}
+.primary-menu > li > a {
+  font-size: 12px;
+  font-weight: 900;
+}
+.primary-menu a {
+  color: #000;
+}
+.primary-menu a:hover, .primary-menu a:focus {
+  color: rgba(0, 0, 0, 0.5);
+}
+.primary-menu > li > .sub-menu {
+  background-color: #fafafa;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -50vw;
+  padding: 30px 0 30px 50vw;
+  position: absolute;
+  top: 70px;
+  width: 200vw;
+  z-index: 400;
+}
+.primary-menu > li > .sub-menu:before {
+  content: '';
+  height: 60px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40px;
+  z-index: 100;
+}
+.primary-menu > li > .sub-menu > li {
+  margin-right: 30px;
+}
+.primary-menu > li > .sub-menu > li > .ancestor-wrapper {
+  font-weight: 900;
+}
+.primary-menu .menu-item-has-children:hover .sub-menu, .primary-menu .menu-item-has-children:focus .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+.primary-menu .sub-menu {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 250ms ease-in;
+}
+.primary-menu .sub-menu .menu {
+  margin-bottom: 60px;
+}
+.primary-menu .sub-menu button {
+  display: none;
+}
+
+.main-menu > li > .ancestor-wrapper > a {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.main-menu li.current-menu-item > .ancestor-wrapper > a, .main-menu li.current_page_ancestor > .ancestor-wrapper > a {
+  text-decoration: underline;
+}
+.main-menu .ancestor-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 100%;
+}
+.main-menu .ancestor-wrapper a {
+  margin-right: 7.5px;
+}
+
+.menus .menu h3 {
+  color: rgba(0, 0, 0, 0.95);
+}
+.menus .menu a {
+  color: rgba(0, 0, 0, 0.5);
+}
+.menus .menu a:hover {
+  color: rgba(0, 0, 0, 0.95);
 }
 
 /* Modal Menu --------------------------------- */
@@ -1069,6 +1173,10 @@ label {
   opacity: 1;
   right: 0;
   transition: opacity 0.25s ease-out;
+}
+.menu-modal .ancestor-wrapper {
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 .menu-modal .close-nav-toggle {
   background: none;
@@ -1133,10 +1241,6 @@ label {
 .modal-menu > li:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.modal-menu > li > .ancestor-wrapper > a {
-  font-weight: 900;
-  text-transform: uppercase;
-}
 .modal-menu ul {
   display: none;
   margin: 0;
@@ -1153,16 +1257,6 @@ label {
       justify-content: flex-start;
   margin: 0;
 }
-.modal-menu li.current-menu-item > .ancestor-wrapper > a, .modal-menu li.current_page_ancestor > .ancestor-wrapper > a {
-  text-decoration: underline;
-}
-.modal-menu .ancestor-wrapper {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  width: 100%;
-}
 .modal-menu a {
   display: inline-block;
   padding: 15px 30px;
@@ -1177,6 +1271,8 @@ label {
 
 .sub-menu-toggle {
   background: none;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
