@@ -38,6 +38,16 @@ $base-font-size: 14px;
 $base-font-weight: 400;
 $base-line-height: 1.75;
 
+$font__size-sm: 12px;
+$font__size-reg: $base-font-size;
+$font__size-med: 16px;
+$font__size-lg: 18px;
+$font__size-xl: 20px;
+$font__size-xxl: 24px;
+$font__size-xxxl: 30px;
+$font__size-xxxxl: 40px;
+
+$font__weight-normal: $base-font-weight;
 $font__weight-bold: 900;
 
 $header-font-family: 'Lora', serif;

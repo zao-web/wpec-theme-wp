@@ -23,11 +23,11 @@ body {
 
   h1,
   h2 {
-    font-size: 40px;
+    font-size: $font__size-xxxxl;
     line-height: 1.2;
 
     @include media(mobile-max) {
-      font-size: 30px;
+      font-size: $font__size-xxxl;
     }
   }
 

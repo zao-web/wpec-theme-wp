@@ -34,7 +34,7 @@
 
     .meta {
       margin-bottom: 37px;
-      font-size: 12px;
+      font-size: $font__size-sm;
       text-transform: uppercase;
       font-weight: $font__weight-bold;
     }
@@ -46,7 +46,7 @@
     h2, h3, h4, h5, h6 {
       margin: 41px 0 13px;
       font-family: $header-font-family;
-      font-size: 30px;
+      font-size: $font__size-xxxl;
       line-height: 1.2;
       color: rgba($black, 0.95);
     }
@@ -148,7 +148,7 @@
       margin: 41px 0 43px -10%;
       font-family: $header-font-family;
       color: rgba($black, 0.95);
-      font-size: 30px;
+      font-size: $font__size-xxxl;
       line-height: 1.2;
       text-align: center;
     }
@@ -200,7 +200,7 @@
       margin-bottom: 15px;
       font-family: $header-font-family;
       color: rgba(0, 0, 0, 0.95);
-      font-size: 24px;
+      font-size: $font__size-xxl;
       line-height: 1.2;
     }
 
@@ -252,7 +252,7 @@
     .meta {
       width: 100%;
       margin-bottom: 14px;
-      font-size: 12px;
+      font-size: $font__size-sm;
       text-transform: uppercase;
       font-weight: $font__weight-bold;
     }

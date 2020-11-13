@@ -26,7 +26,7 @@
     margin-right: $size__spacing-unit;
 
     & > a {
-      font-size: 12px;
+      font-size: $font__size-sm;
       font-weight: $font__weight-bold;
     }
   }

@@ -54,7 +54,7 @@
         margin-bottom: 54px;
 
         h3 {
-          font-size: 18px;
+          font-size: $font__size-lg;
           font-weight: $font__weight-bold;
         }
       }
@@ -102,7 +102,7 @@
 
     header {
       h3 {
-        font-size: 18px;
+        font-size: $font__size-lg;
         font-weight: $font__weight-bold;
       }
     }

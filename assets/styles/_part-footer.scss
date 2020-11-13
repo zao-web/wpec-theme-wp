@@ -19,7 +19,7 @@
     h1, h2, h3, h4, h5 {
         font-family: $base-font-family;
         color: $white;
-        font-size: 16px;
+        font-size: $font__size-med;
     }
 
     a {
@@ -95,7 +95,7 @@
 
     // Style mailchimp newsletter
     .mc4wp-form {
-        font-size: 16px;
+        font-size: $font__size-med;
         margin-top: 22px;
 
         .instructions {
