@@ -1160,13 +1160,21 @@ label {
   bottom: 0;
   left: -99999rem;
   right: 99999rem;
-  top: 189px;
+  top: 140px;
   transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
   z-index: 99;
 }
 @media (min-width: 782px) {
   .menu-modal {
-    top: 175px;
+    top: 140px;
+  }
+}
+.admin-bar .menu-modal {
+  top: 186px;
+}
+@media (min-width: 782px) {
+  .admin-bar .menu-modal {
+    top: 172px;
   }
 }
 .menu-modal.active {
@@ -1531,11 +1539,11 @@ label {
   animation-duration: .75s;
   animation-fill-mode: both;
 }
-.showing-menu-modal #header {
+.showing-menu-modal.admin-bar #header {
   margin-top: 46px;
 }
 @media (min-width: 782px) {
-  .showing-menu-modal #header {
+  .showing-menu-modal.admin-bar #header {
     margin-top: 32px;
   }
 }

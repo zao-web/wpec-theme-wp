@@ -13,7 +13,7 @@
   animation-duration: .75s;
   animation-fill-mode: both;
 
-  .showing-menu-modal & {
+  .showing-menu-modal.admin-bar & {
     margin-top: $size__wpadmin-bar-mobile;
 
     @include media(wp-admin) {

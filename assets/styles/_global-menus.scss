@@ -169,12 +169,20 @@
   bottom: 0;
   left: -99999rem;
   right: 99999rem;
-  top: 143px + $size__wpadmin-bar-mobile;
+  top: $size__header;
   transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
   z-index: 99;
 
   @include media(wp-admin) {
-    top: 143px + $size__wpadmin-bar-desktop;
+    top: 140px;
+  }
+
+  .admin-bar & {
+    top: $size__header + $size__wpadmin-bar-mobile;
+
+    @include media(wp-admin) {
+      top: $size__header + $size__wpadmin-bar-desktop;
+    }
   }
 
   &.active {
