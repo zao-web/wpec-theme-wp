@@ -37,28 +37,32 @@
 			</nav><!-- mobile-menu -->
 
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
-	            <nav class="social" aria-label="<?php esc_attr_e( 'Social Links Menu', 'simply' ); ?>">
-	              <?php
-	              wp_nav_menu(
-	                array(
-	                  'theme_location' => 'social',
-	                  'menu_class'     => 'social-links-menu',
-	                  'link_before'    => '<span class="screen-reader-text">',
-	                  'link_after'     => '</span>' . simply_get_icon_svg( 'link' ),
-	                  'depth'          => 1,
-	                )
-	              );
-	              ?>
-	            </nav><!-- .social-navigation -->
-	          <?php endif; ?>
+				<nav class="social" aria-label="<?php esc_attr_e( 'Social Links Menu', 'simply' ); ?>">
+				  <?php
+				  wp_nav_menu(
+					array(
+					  'theme_location' => 'social',
+					  'menu_class'     => 'social-links-menu',
+					  'link_before'    => '<span class="screen-reader-text">',
+					  'link_after'     => '</span>' . simply_get_icon_svg( 'link' ),
+					  'depth'          => 1,
+					)
+				  );
+				  ?>
+				</nav><!-- .social-navigation -->
+			  <?php endif; ?>
 
-	          <?php
-	          // Check whether the header search is activated in the customizer.
-	          $enable_header_search = get_theme_mod( 'enable_header_search', true );
+			  <?php
+			  // Check whether the header search is activated in the customizer.
+			  $enable_header_search = get_theme_mod( 'enable_header_search', true );
 
-	          if ( true === $enable_header_search ) {
-	            get_search_form();
-	          } ?>
+			  if ( true === $enable_header_search ) : ?>
+
+				<div class="menu-modal__search menu-item">
+					<?php get_search_form(); ?>
+				</div>
+
+			  <?php endif; ?>
 		</div><!-- .menu-wrapper -->
 
 	</div><!-- .menu-modal-inner -->
