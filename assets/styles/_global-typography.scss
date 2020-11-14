@@ -14,33 +14,33 @@ body {
   a {
     color: rgba($black, 0.95);
   }
+}
 
-  h1,
-  h2 {
-    font-family: $header-font-family;
+h1,
+h2 {
+  font-family: $header-font-family;
+  color: rgba($black, 0.95);
+}
+
+h1,
+h2 {
+  font-size: $font__size-xxxxl;
+  line-height: 1.2;
+
+  @include media(mobile-max) {
+    font-size: $font__size-xxxl;
+  }
+}
+
+article,
+.article {
+  a {
     color: rgba($black, 0.95);
-  }
+    border-bottom: 1px dotted rgba($black, 0.95);
 
-  h1,
-  h2 {
-    font-size: $font__size-xxxxl;
-    line-height: 1.2;
-
-    @include media(mobile-max) {
-      font-size: $font__size-xxxl;
-    }
-  }
-
-  article,
-  .article {
-    a {
-      color: rgba($black, 0.95);
-      border-bottom: 1px dotted rgba($black, 0.95);
-
-      &:hover {
-        color: rgba($black, 0.5);
-        border-bottom: 1px dotted rgba($black, 0.5);
-      }
+    &:hover {
+      color: rgba($black, 0.5);
+      border-bottom: 1px dotted rgba($black, 0.5);
     }
   }
 }

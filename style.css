@@ -342,29 +342,32 @@ body {
 body a {
   color: rgba(0, 0, 0, 0.95);
 }
-body h1,
-body h2 {
+
+h1,
+h2 {
   font-family: "Lora", serif;
   color: rgba(0, 0, 0, 0.95);
 }
-body h1,
-body h2 {
+
+h1,
+h2 {
   font-size: 40px;
   line-height: 1.2;
 }
 @media (max-width: 480px) {
-  body h1,
-  body h2 {
+  h1,
+  h2 {
     font-size: 30px;
   }
 }
-body article a,
-body .article a {
+
+article a,
+.article a {
   color: rgba(0, 0, 0, 0.95);
   border-bottom: 1px dotted rgba(0, 0, 0, 0.95);
 }
-body article a:hover,
-body .article a:hover {
+article a:hover,
+.article a:hover {
   color: rgba(0, 0, 0, 0.5);
   border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
 }
@@ -1606,21 +1609,21 @@ label {
   display: -ms-flexbox;
   display: flex;
 }
-#header .main .brand {
+#header .brand {
   height: 40px;
   float: left;
   margin-top: 30px;
 }
-#header .main .brand:hover {
+#header .brand:hover {
   transform: translateX(-3px);
 }
-#header .main .brand .logo,
-#header .main .brand img {
+#header .logo,
+#header img {
   height: 100%;
   float: left;
   fill: #000;
 }
-#header .main .brand h1 {
+#header h1 {
   float: left;
   margin-left: 20px;
   line-height: 40px;
@@ -1629,16 +1632,6 @@ label {
   font-weight: 400;
   color: #000;
   text-transform: uppercase;
-}
-#header .main .brand .menu {
-  display: none;
-}
-@media (max-width: 780px) {
-  #header .main .brand .menu {
-    display: block;
-    float: left;
-    margin: 8px 0 0 10px;
-  }
 }
 
 .site-branding {

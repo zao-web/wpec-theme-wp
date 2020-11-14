@@ -109,47 +109,36 @@
   .main {
     height: 100px;
     display: flex;
+  }
 
-    // Logo & brand.
+  // Logo & brand.
 
-    .brand {
-      height: 40px;
-      float: left;
-      margin-top: 30px;
+  .brand {
+    height: 40px;
+    float: left;
+    margin-top: 30px;
 
-      &:hover {
-        transform: translateX(-3px);
-      }
-
-      .logo,
-      img {
-        height: 100%;
-        float: left;
-        fill: $black;
-      }
-
-      h1 {
-        float: left;
-        margin-left: 20px;
-        line-height: 40px;
-        font-family: $base-font-family;
-        font-size: $font__size-xl;
-        font-weight: 400;
-        color: $black;
-        text-transform: uppercase;
-      }
-
-      .menu {
-        display: none;
-
-        //Confirm original was 600px
-        @include media(tablet-max) {
-          display: block;
-          float: left;
-          margin: 8px 0 0 10px;
-        }
-      }
+    &:hover {
+      transform: translateX(-3px);
     }
+  }
+
+  .logo,
+  img {
+    height: 100%;
+    float: left;
+    fill: $black;
+  }
+
+  h1 {
+    float: left;
+    margin-left: 20px;
+    line-height: 40px;
+    font-family: $base-font-family;
+    font-size: $font__size-xl;
+    font-weight: 400;
+    color: $black;
+    text-transform: uppercase;
   }
 }
 
