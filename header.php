@@ -113,12 +113,9 @@
             <?php
           } 
 
-          // Check whether the header search is activated in the customizer.
-          $enable_header_search = get_theme_mod( 'enable_header_search', true );
+          get_search_form();
 
-          if ( true === $enable_header_search ) {
-            get_search_form();
-          } ?>
+          ?>
 
         </div>
       </div>

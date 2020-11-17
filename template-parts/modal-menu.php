@@ -52,17 +52,10 @@
 				</nav><!-- .social-navigation -->
 			  <?php endif; ?>
 
-			  <?php
-			  // Check whether the header search is activated in the customizer.
-			  $enable_header_search = get_theme_mod( 'enable_header_search', true );
+			<div class="menu-modal__search menu-item">
+				<?php get_search_form(); ?>
+			</div>
 
-			  if ( true === $enable_header_search ) : ?>
-
-				<div class="menu-modal__search menu-item">
-					<?php get_search_form(); ?>
-				</div>
-
-			  <?php endif; ?>
 		</div><!-- .menu-wrapper -->
 
 	</div><!-- .menu-modal-inner -->
