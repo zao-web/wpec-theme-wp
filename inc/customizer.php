@@ -48,18 +48,12 @@ function simply_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'panel_1', array(
 		'title'           => __( 'Theme Appearances', 'simply' ),
 		'panel'           => 'options_panel',
-		'description'     => __( 'Changes the look and feel of your theme', 'simply' ),
+		'description'     => __( 'Change the look and feel of your theme', 'simply' ),
 	) );
 
 	$wp_customize->add_setting( 'panel_1', array(
 		'default'           => false,
 		'sanitize_callback' => 'absint',
-	) );
-
-	$wp_customize->add_control( 'panel_1', array(
-		'label'   => __( 'Theme Color Scheme', 'simply' ),
-		'section' => 'panel_1',
-		'type'    => 'dropdown-pages',
 	) );
 
 	// Panel 2.
@@ -125,13 +119,13 @@ add_action( 'customize_register', 'simply_customize_register' );
  * Sanitize the colorscheme.
  */
 function simply_sanitize_colorscheme( $input ) {
-	$valid = array( 'light', 'dark', 'custom' );
+	$valid = array( 'theme-1', 'theme-2', 'theme-3', 'theme-4', 'theme-5' );
 
 	if ( in_array( $input, $valid ) ) {
 		return $input;
 	}
 
-	return 'light';
+	return 'theme-1';
 }
 
 /**
