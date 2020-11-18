@@ -37,6 +37,53 @@ function simply_customize_register( $wp_customize ) {
 	) );
 
 	/**
+		 * Add 'Error Page Background Image' Setting.
+		 */
+	$wp_customize->add_setting( 'error_image', array(
+		'default'           => get_stylesheet_directory_uri() . '/assets/images/error-default.jpg',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+
+	/**
+	 * Add 'Home Top Background Image' image upload Control.
+	 */
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			// $wp_customize object
+			$wp_customize,
+			// $id
+			'error_image', array(
+				'settings'		=> 'error_image',
+				'section'		=> 'panel_2',
+				'label'			=> __( 'Error Page Background Image', 'theme-slug' ),
+				'description'	=> __( 'Select a large image for the background of the 404 or Error Page. (Recommended minimum of 1200x800.', 'theme-slug' )
+			)
+		)
+	);
+
+	/**
+	 * Error Page font colors.
+	 */
+	$wp_customize->add_setting( 'error_text_color', array(
+		'default'           => 'light',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'simply_sanitize_error_text_color',
+	) );
+
+	$wp_customize->add_control( 'error_text_color', array(
+		'type'    => 'radio',
+		'label'    => __( 'Font Color', 'simply' ),
+		'choices'  => array(
+			'light'  => __( 'Light Text', 'simply' ),
+			'dark'   => __( 'Dark Text', 'simply' ),
+			'accent' => __( 'Accent Text', 'simply' ),
+		),
+		'section'  => 'panel_2',
+		'priority' => 10,
+	) );
+
+	/**
 	 * Add the Theme Options section.
 	 */
 	$wp_customize->add_panel( 'options_panel', array(
@@ -58,27 +105,13 @@ function simply_customize_register( $wp_customize ) {
 
 	// Panel 2.
 	$wp_customize->add_section( 'panel_2', array(
-		'title'           => __( 'Panel 2', 'simply' ),
-		'active_callback' => 'is_front_page',
+		'title'           => __( 'Error Page', 'simply' ),
 		'panel'           => 'options_panel',
-		'description'     => __( 'Add an image to your panel by setting a featured image in the page editor. If you don&rsquo;t select a page, this panel will not be displayed.', 'simply' ),
-	) );
-
-	$wp_customize->add_setting( 'panel_2', array(
-		'default'           => false,
-		'sanitize_callback' => 'absint',
-	) );
-
-	$wp_customize->add_control( 'panel_2', array(
-		'label'   => __( 'Panel Content', 'simply' ),
-		'section' => 'panel_2',
-		'type'    => 'dropdown-pages',
 	) );
 
 	// Panel 3.
 	$wp_customize->add_section( 'panel_3', array(
 		'title'           => __( 'Panel 3', 'simply' ),
-		'active_callback' => 'is_front_page',
 		'panel'           => 'options_panel',
 		'description'     => __( 'Add an image to your panel by setting a featured image in the page editor. If you don&rsquo;t select a page, this panel will not be displayed.', 'simply' ),
 	) );
@@ -126,6 +159,19 @@ function simply_sanitize_colorscheme( $input ) {
 	}
 
 	return 'theme-1';
+}
+
+/**
+ * Sanitize the error_text_color.
+ */
+function simply_sanitize_error_text_color( $input ) {
+	$valid = array( 'light', 'dark', 'accent' );
+
+	if ( in_array( $input, $valid ) ) {
+		return $input;
+	}
+
+	return 'light';
 }
 
 /**
