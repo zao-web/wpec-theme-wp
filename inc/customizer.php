@@ -41,8 +41,8 @@ function simply_customize_register( $wp_customize ) {
 		 */
 	$wp_customize->add_setting( 'error_image', array(
 		'default'           => get_stylesheet_directory_uri() . '/assets/images/error-default.jpg',
-		'transport'         => 'postMessage',
-		'sanitize_callback' => 'esc_url_raw',
+		'type' 				=> 'theme_mod',
+		'sanitize_callback' => 'simply_sanitize_error_image',
 	) );
 
 	/**
@@ -53,11 +53,11 @@ function simply_customize_register( $wp_customize ) {
 			// $wp_customize object
 			$wp_customize,
 			// $id
-			'error_image', array(
+			'simply_error_image', array(
 				'settings'		=> 'error_image',
 				'section'		=> 'panel_2',
 				'label'			=> __( 'Error Page Background Image', 'theme-slug' ),
-				'description'	=> __( 'Select a large image for the background of the 404 or Error Page. (Recommended minimum of 1200x800.', 'theme-slug' )
+				'description'	=> __( 'Select a large image for the background of the 404 or Error Page. (Recommended minimum of 1200x800.)', 'theme-slug' )
 			)
 		)
 	);
@@ -159,6 +159,19 @@ function simply_sanitize_colorscheme( $input ) {
 	}
 
 	return 'theme-1';
+}
+
+/**
+ * Sanitize footer image
+ *
+ * @param $input
+ *
+ * @return string
+ */
+function simply_sanitize_error_image($input)
+{
+    error_log(attachment_url_to_postid($input));//debug
+    return attachment_url_to_postid($input);
 }
 
 /**
