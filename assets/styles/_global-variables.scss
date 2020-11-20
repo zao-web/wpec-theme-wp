@@ -60,6 +60,7 @@ $size__spacing-quarter: $size__spacing-unit / 4;
 $size__wpadmin-bar-mobile: 46px;
 $size__wpadmin-bar-desktop: 32px;
 $size__header: 140px;
+$size__cover-height: calc(100vh - 140px); // can't have a variable so make sure it matches $size__header
 
 $size__hamburger-height: 2px;
 $size__hamburger-width: 20px;

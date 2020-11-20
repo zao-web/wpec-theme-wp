@@ -18,3 +18,81 @@
 		line-height: 1.4;
 	}
 }
+
+
+/* Full Screen Covers: Subtract the header height.
+---------------------------------------------------------------------------------------------------- */
+
+.wp-block-cover {
+  height: $size__cover-height;
+  position: relative;
+
+  // Add the fadein animation.
+
+  animation-name: fadein;
+  animation-fill-mode: both;
+  animation-duration: .75s;
+  animation-delay: .25s;
+
+  // The background image.
+
+  &:before {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+
+  // The copy.
+
+  &__inner-container {
+	width: 80%;
+	max-width: 500px;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	transform: translateY(-50%);
+  }
+
+  h2 {
+	margin-bottom: 9px;
+	color: $white;
+	text-align: left;
+	width: 100%;
+  }
+
+  p {
+
+	margin-bottom: 21px;
+	font-size: $font__size-med;
+	color: rgba($white, 0.85);
+  }
+
+  a {
+	border-bottom: none;
+  }
+
+  // The down arrow.
+
+  .down {
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	z-index: 20;
+
+	// Add the bouncedown animation.
+
+	animation-name: bouncedown;
+	animation-duration: 2.5s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+
+	svg {
+	  height: 40px;
+	  fill: $white;
+	}
+  }
+}

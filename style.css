@@ -975,57 +975,6 @@ label {
   max-width: 1000px;
 }
 
-/* Full Screen Covers: Subtract the header height.
----------------------------------------------------------------------------------------------------- */
-.cover {
-  height: calc(100% - 140px);
-  position: relative;
-  animation-name: fadein;
-  animation-fill-mode: both;
-  animation-duration: .75s;
-  animation-delay: .25s;
-}
-.cover .background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.cover .copy {
-  width: 80%;
-  max-width: 500px;
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
-}
-.cover .copy h2 {
-  margin-bottom: 9px;
-  color: #fff;
-}
-.cover .copy p {
-  margin-bottom: 21px;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.85);
-}
-.cover .down {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 20;
-  animation-name: bouncedown;
-  animation-duration: 2.5s;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-}
-.cover .down svg {
-  height: 40px;
-  fill: #fff;
-}
-
 /* Alignments
 ---------------------------------------------------------------------------------------------------- */
 .alignfull {
@@ -1525,6 +1474,62 @@ label {
   margin: 41px 0 43px;
   font-size: 24px;
   line-height: 1.4;
+}
+
+/* Full Screen Covers: Subtract the header height.
+---------------------------------------------------------------------------------------------------- */
+.wp-block-cover {
+  height: calc(100vh - 140px);
+  position: relative;
+  animation-name: fadein;
+  animation-fill-mode: both;
+  animation-duration: .75s;
+  animation-delay: .25s;
+}
+.wp-block-cover:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wp-block-cover__inner-container {
+  width: 80%;
+  max-width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+.wp-block-cover h2 {
+  margin-bottom: 9px;
+  color: #fff;
+  text-align: left;
+  width: 100%;
+}
+.wp-block-cover p {
+  margin-bottom: 21px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.wp-block-cover a {
+  border-bottom: none;
+}
+.wp-block-cover .down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 20;
+  animation-name: bouncedown;
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+.wp-block-cover .down svg {
+  height: 40px;
+  fill: #fff;
 }
 
 /* Individual Parts: All the single-page specific stuff.
